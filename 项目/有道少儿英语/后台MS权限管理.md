@@ -29,6 +29,7 @@
 
 ### redis分布式锁
 
+
 ### 文件操作
-获取ms下，所有的class文件，读取@Controller.class, @RestController.class，然后将class中的方法上RequestMapping，GetMapping,PostMapping
+获取ms下，所有的class文件，读取@Controller.class, @RestController.class，然后将class中的方法上RequestMapping，GetMapping,PostMapping的url取到
 
