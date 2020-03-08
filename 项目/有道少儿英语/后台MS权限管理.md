@@ -30,5 +30,5 @@
 ### redis分布式锁
 
 ### 文件操作
-获取ms下，所有的class文件，读取@
+获取ms下，所有的class文件，读取@Controller.class, @RestController.class，然后将对应的url
 
