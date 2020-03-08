@@ -4,5 +4,5 @@
 ![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/03/08/Screen%20Shot%202019-06-25%20at%2011.42.16%20AM-1583637023859.png?token=AHBYBJ3GYFIXXCLZQADJBHK6MRRF6)
 
 ## 整体思路
-1. 项目启动时读取所有接口，更新权限表（）
+1. 项目启动时读取所有接口，更新权限表
 2. 
