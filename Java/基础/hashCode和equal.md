@@ -28,5 +28,10 @@ equals，我们必须遵循如下规则：
 
 3. 如果两个对象根据 equals(Object o) 方法是不相等的，则调用这两个对象中任一个对象的 hashCode 方法，不要求产生不同的整数结果。但如果能不同，则可能提高散列表的性能。
 
+## 关系
+
+* 如果 x.equals(y) 返回“true”，那么 x 和 y 的 hashCode() 必须相等。
+
+* 如果 x.equals(y) 返回“false”，那么 x 和 y 的 hashCode() 有可能相等，也有可能不等。
 
 
