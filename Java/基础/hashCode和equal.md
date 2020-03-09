@@ -6,4 +6,7 @@
 
 ## hashCode和equal
 
+在 Java 中 hashCode 的实现总是伴随着 equals，他们是紧密配合的，你要是自己设计了其中一个，就要设计另外一个。
+
+
 
