@@ -1,3 +1,3 @@
 # hashCode和equal
 ## hashCode的作用
-对于数组
+对于一个HashSet，
