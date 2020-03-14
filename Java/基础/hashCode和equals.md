@@ -1,4 +1,4 @@
-# hashCode和equal
+# hashCode和equals
 
 ## haseCode
 java中hashCode方法就是根据一定的规则将对象的相关信息（对象的存储地址，对象的字段）映射成一个数值，这个数值称为散列值。
@@ -7,7 +7,7 @@ java中hashCode方法就是根据一定的规则将对象的相关信息（对�
 
 对于一个HashSet要保证元素不重复，当对有新元素要add时，若只用equal方法进比较，则要遍历所有的元素，当整个Set集合很大时，这样做会带来很大的开销，故引入了hashCode，当需要添加一个元素时，先比较hashCode值，若不存在则直接add，若存在则通过equal方法进行比较。这样添加一个元素最多也只用调用一次equal方法，也不用遍历整个Set。
 
-## hashCode和equal
+## hashCode和equals
 
 在 Java 中 hashCode 的实现总是伴随着 equals，他们是紧密配合的，你要是自己设计了其中一个，就要设计另外一个。
 
@@ -37,9 +37,29 @@ equals，我们必须遵循如下规则：
 
 * 如果 x.equals(y) 返回“false”，那么 x 和 y 的 hashCode() 有可能相等，也有可能不等。
 
-### 重写hashcode和equal例子
+### 重写hashcode和equals例子
 ```java
+@Data
+public class TestHashcodeAndEquals {
+  private String advertiseChannel;
+  private Long goodsId;
+  private int count;
 
+  @Override
+  public int hashCode() {
+    return Objects.hash(getAdvertiseChannel(), getGoodsId());
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) return true; //自反性
+    if (obj == null || this.getClass() != obj.getClass()) {  //传递性,非空性
+      return false;
+    }
+    OrderChannelStatisticsResult orderChannelStatisticsResult = (OrderChannelStatisticsResult) obj;
+    return goodsId.equals(orderChannelStatisticsResult.getGoodsId()) && advertiseChannel.equals(orderChannelStatisticsResult.getAdvertiseChannel());
+  }
+}
 ```
 
 
