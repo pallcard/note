@@ -41,6 +41,7 @@ equals，我们必须遵循如下规则：
 ```java
 @Data
 public class TestHashcodeAndEquals {
+// 
   private String attribute1;
   private long attribute2;
   private int attribute3;
@@ -57,7 +58,7 @@ public class TestHashcodeAndEquals {
       return false;
     }
     TestHashcodeAndEquals testHashcodeAndEquals = (TestHashcodeAndEquals ) obj;
-    return this.attribute1.equals(testHashcodeAndEquals.getAttribute1()) && this.attribute2.equals(testHashcodeAndEquals.getAttribute2());
+    return this.attribute1.equals(testHashcodeAndEquals.getAttribute1()) && this.attribute2 == testHashcodeAndEquals.getAttribute2();
   }
 }
 ```
