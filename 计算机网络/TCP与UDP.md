@@ -33,5 +33,5 @@ time-wait
 4. ESTABLISHED：表示建立连接完成
 四次挥手
 1. FIN_WAIT_1：表示等待对方发送FIN请求
-2. FIN_WAIT_2：表示收到了ACK等待对方发送FIN请求
-
+2. FIN_WAIT_2：表示收到了ACK，继续等待对方发送FIN请求
+3. TIME_WAIT：表示收到FIN，处于等待
