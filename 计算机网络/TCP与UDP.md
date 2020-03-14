@@ -36,4 +36,6 @@ time-wait
 2. FIN_WAIT_2：表示收到了ACK，继续等待对方发送FIN请求
 3. TIME_WAIT：表示收到FIN，需要等2MSL(Max Segment Lifetime)，网络不可靠，发送ACK后，服务器为收到ACK，则服务器重传FIN
 4. CLOSE_WAIT：表示收到了FIN，并返回了ACK，等待关闭状态，需要等到数据发送完毕。
-5. LAST_ACK：服务器发送FIN后等待
+5. LAST_ACK：服务器发送FIN后等待ACK状态
+6. CLOSED：连接已经断开
+7. CLOSEING
