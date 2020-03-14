@@ -47,3 +47,5 @@ time-wait
 5. LAST_ACK：服务器发送FIN后等待ACK状态
 6. CLOSED：连接已经断开
 7. CLOSEING：表示发送完FIN，直接收到对方FIN，两端几乎同时关闭同一个socket的时候才会出现CLOSING状态
+
+### 滑动
