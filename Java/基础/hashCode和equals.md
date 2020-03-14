@@ -47,7 +47,7 @@ public class TestHashcodeAndEquals {
 
   @Override
   public int hashCode() {
-    return Objects.hash(getAdvertiseChannel(), getGoodsId());
+    return Objects.hash(getAttribute1(), getAttribute2());
   }
 
   @Override
@@ -56,8 +56,8 @@ public class TestHashcodeAndEquals {
     if (obj == null || this.getClass() != obj.getClass()) {  //传递性,非空性
       return false;
     }
-    OrderChannelStatisticsResult orderChannelStatisticsResult = (OrderChannelStatisticsResult) obj;
-    return goodsId.equals(orderChannelStatisticsResult.getGoodsId()) && advertiseChannel.equals(orderChannelStatisticsResult.getAdvertiseChannel());
+    TestHashcodeAndEquals testHashcodeAndEquals = (TestHashcodeAndEquals ) obj;
+    return attribute1.equals(testHashcodeAndEquals.getGoodsId()) && advertiseChannel.equals(orderChannelStatisticsResult.getAdvertiseChannel());
   }
 }
 ```
