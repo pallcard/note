@@ -26,6 +26,10 @@ time-wait
 2. 保证服务器最后发送的数据都能被客户端接收到
 
 ### 状态说明
+三次握手
 1. LISTEN：表示socket处理listen状态
 2. SYN_SENT：表示socket在建立连接时，已发送SYN请求，在等待确认报文
-3. SYN_REVD：表示
+3. SYN_REVD：表示收到了SYN请求
+4. ESTABLISHED：表示建立连接完成
+四次挥手
+1.
