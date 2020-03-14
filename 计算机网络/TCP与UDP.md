@@ -75,3 +75,7 @@ time-wait
 ## TCP网络编程中connect()、listen()和accept()三者之间的关系
 
 ![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/03/14/1584178293109-1584178293183.png?token=AHBYBJ4J4S7ZW577YXVNKO26NSSLK)
+
+listen() 函数的主要作用就是将套接字( sockfd )变成被动的连接监听套接字（被动等待客户端的连接），至于参数 backlog 的作用是设置内核中连接队列的长度（这个长度有什么用，后面做详细的解释），TCP 三次握手也不是由这个函数完成，listen()的作用仅仅告诉内核一些信息。
+
+当有一个客户端主动连接（connect()），Linux 内核就自动完成TCP 三次握手，将建立好的链接自动存储到队列中，如此重复。
