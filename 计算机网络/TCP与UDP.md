@@ -14,4 +14,4 @@
 ![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/03/14/f87afe72-c2df-4c12-ac03-9b8d581a8af8-1584172500269.jpg?token=AHBYBJY53R3V3SU4WTLRPN26NSHBI)
 
 * 第一次:客户端发送FIN给服务器，表示客户端数据已经传完，要关闭连接
-* 第二次：服务器发送ACK给客服端，表示
+* 第二次：服务器发送ACK给客服端，表示服务器收到了请求，此时服务器需要把未传完的数据
