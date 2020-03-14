@@ -4,9 +4,10 @@
 几个字段：
 * 序号：对于字节流进行编号
 * 确认好：期望收到的下一个报文段的序号
-* 数据首部的长度
-
-
+* 数据偏移：首部的长度
+* 确认ACK：当 ACK=1 时确认号字段有效，否则无效
+* 同步SYN：
+* 
 ### 三次握手
 ![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/03/14/e92d0ebc-7d46-413b-aec1-34a39602f787-1584172028486.png?token=AHBYBJ5DXSVBS24EB35IC226NSGD4)
 
