@@ -34,4 +34,4 @@ time-wait
 四次挥手
 1. FIN_WAIT_1：表示等待对方发送FIN请求
 2. FIN_WAIT_2：表示收到了ACK，继续等待对方发送FIN请求
-3. TIME_WAIT：表示收到FIN，需要等2MSL(Max Segment Lifetime)，网络
+3. TIME_WAIT：表示收到FIN，需要等2MSL(Max Segment Lifetime)，网络不可靠，发送ACK后，服务器为收到ACK，则服务器重传FIN
