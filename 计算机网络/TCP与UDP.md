@@ -27,4 +27,5 @@ time-wait
 
 ### 状态说明
 1. LISTEN：表示socket处理listen状态
-2. SYN_SENT：表示socket在发出connect连接，
+2. SYN_SENT：表示socket在建立连接时，已发送SYN请求，在等待确认报文
+3. SYN_REVD：表示
