@@ -37,11 +37,11 @@ equals，我们必须遵循如下规则：
 
 * 如果 x.equals(y) 返回“false”，那么 x 和 y 的 hashCode() 有可能相等，也有可能不等。
 
-### 重写hashcode和equals例子
+## 重写hashcode和equals例子
 ```java
 @Data
 public class TestHashcodeAndEquals {
-// 
+// 该对象相等的判断 取决于 attribute1和attribute2
   private String attribute1;
   private long attribute2;
   private int attribute3;
