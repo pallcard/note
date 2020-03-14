@@ -57,7 +57,7 @@ public class TestHashcodeAndEquals {
       return false;
     }
     TestHashcodeAndEquals testHashcodeAndEquals = (TestHashcodeAndEquals ) obj;
-    return attribute1.equals(testHashcodeAndEquals.getGoodsId()) && advertiseChannel.equals(orderChannelStatisticsResult.getAdvertiseChannel());
+    return attribute1.equals(testHashcodeAndEquals.getAttribute1()) && attribute2.equals(testHashcodeAndEquals.getAttribute2());
   }
 }
 ```
