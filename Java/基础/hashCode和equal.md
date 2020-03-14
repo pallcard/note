@@ -1,7 +1,7 @@
 # hashCode和equal
 
 ## haseCode
-java中hashCode方法
+java中hashCode方法就是根据一定的规则将对象
 
 ### hashCode的作用
 
