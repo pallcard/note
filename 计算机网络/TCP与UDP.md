@@ -11,3 +11,6 @@
 3次握手原因：防止错误的连接请求（重传机制产生多个连接请求）使得服务器错误的打开连接，浪费资源。
 
 ### 四次挥手
+![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/03/14/f87afe72-c2df-4c12-ac03-9b8d581a8af8-1584172500269.jpg?token=AHBYBJY53R3V3SU4WTLRPN26NSHBI)
+
+* 第一次:客户端发送FIN给
