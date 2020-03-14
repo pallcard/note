@@ -1,6 +1,8 @@
 # TCP与UDP
 
 ## TCP
+![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/03/14/1584177724544-1584177724548.png?token=AHBYBJYTVBCNWL2YHKXV7KS6NSRIE)
+
 几个字段：
 * 序号：对于字节流进行编号
 * 确认好：期望收到的下一个报文段的序号
