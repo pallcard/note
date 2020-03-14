@@ -59,8 +59,9 @@ time-wait
 拥塞控制：（网络出现拥塞，出现分组丢失，触发超时重传，更拥塞），通过控制发送方发送速率，控制整个网络的拥塞程度。（慢开始，拥塞避免，快重传，快恢复）
 
 ## UDP
+### UDP首部
 
-
+![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/03/14/1584177682155-1584177682163.png?token=AHBYBJ4V66QO27ZZFD6CHVK6NSRFQ)
 
 ## 比较
 
