@@ -37,4 +37,9 @@ equals，我们必须遵循如下规则：
 
 * 如果 x.equals(y) 返回“false”，那么 x 和 y 的 hashCode() 有可能相等，也有可能不等。
 
+### 重写hashcode和equal例子
+```java
+
+```
+
 
