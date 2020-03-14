@@ -32,4 +32,6 @@ time-wait
 3. SYN_REVD：表示收到了SYN请求
 4. ESTABLISHED：表示建立连接完成
 四次挥手
-1.
+1. FIN_WAIT_1：表示等待对方发送FIN请求
+2. FIN_WAIT_2:
+
