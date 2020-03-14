@@ -26,5 +26,5 @@ time-wait
 2. 保证服务器最后发送的数据都能被客户端接收到
 
 ### 状态说明
-1. LISTEN ：表示socket处理listen状态
-2. SYN——
+1. LISTEN：表示socket处理listen状态
+2. SYN_SENT：表示socket在发出connect连接，
