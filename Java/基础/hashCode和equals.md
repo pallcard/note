@@ -41,9 +41,9 @@ equals，我们必须遵循如下规则：
 ```java
 @Data
 public class TestHashcodeAndEquals {
-  private String advertiseChannel;
-  private Long goodsId;
-  private int count;
+  private String attribute1;
+  private long attribute2;
+  private int attribute3;
 
   @Override
   public int hashCode() {
