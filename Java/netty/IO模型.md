@@ -42,3 +42,5 @@ Linux提供select/poll，进程通过将一个和多个fd传递给select/poll系
 
 
 
+
+
