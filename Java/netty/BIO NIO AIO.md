@@ -10,7 +10,7 @@
 [示例代码](https://github.com/pallcard/learn-java/blob/master/src/main/java/com/wishhust/net/netty/bio "bio")
 
 ### BIO优化
-BIO需要为每一个客户端都创建一个线程去处理，故可以使用线程池进行优化，从而形成
+BIO需要为每一个客户端都创建一个线程去处理，故可以使用线程池进行优化，从而形成M个客户端，线程池最大线程数N，其中M远大于N，通过线程池可以灵活地调配线程资源。
 
 
 
