@@ -40,6 +40,7 @@ Linux提供select/poll，进程通过将一个和多个fd传递给select/poll系
 2. I/O效率不会随着FD数目的增加而线性下降
     select/pool当FD的集合比较大时，每次调用都会线性扫描全部集合，导致效率成线性下降。epool是更加每个FD上的callback函数实现的。
 3. 使用mmap加速内核与用户空间的消息传递
+    都需要内核把FD
 
 
 
