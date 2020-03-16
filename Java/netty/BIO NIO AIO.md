@@ -6,6 +6,8 @@
 
 ![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/03/16/Popo%E6%88%AA%E5%9B%BE2020316234123-1584373317560.png)
 
+采用BIO
+
 
 
 
