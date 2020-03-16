@@ -36,7 +36,8 @@ Linux提供select/poll，进程通过将一个和多个fd传递给select/poll系
 
 ### epool
 1. 支持一个进程打开的socket描述符（fd） 不受限制
-2. I?
+2. I/O效率不会随着FD数目的增加而线性下降
+3. 
 
 
 
