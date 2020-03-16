@@ -18,7 +18,7 @@ BIO需要为每一个客户端都创建一个线程去处理，故可以使用�
 
 [示例代码](https://github.com/pallcard/learn-java/blob/master/src/main/java/com/wishhust/net/netty/bio2 "bio2")
 
-
+### BIO
 
 
 
