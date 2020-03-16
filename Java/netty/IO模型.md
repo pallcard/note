@@ -1,5 +1,5 @@
 # I/O模型
-## UNIX下的五种#### 四级标题I/O模型
+## UNIX下的五种I/O模型
 
 linux的内核将所有外部设备看做是一个文件来操作，对一个文件的读写操作会调用提供的系统命令，返回一个fd(file descriptor),描述符是一个指向内核中的一个**结构体**数字。**以套接字为例讲解**。
 
@@ -28,6 +28,10 @@ Linux提供select/poll，进程通过将一个和多个fd传递给select/poll系
 告知内核启动某个操作，内核执行完所有操作后通知我们。信号量I/O是由内核告诉我们何时I/O，异步I/O告诉我们何时I/O完成。
 
 ![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/03/16/Popo%E6%88%AA%E5%9B%BE20203160192-1584289151326.png)
+
+## I/O多路复用
+
+
 
 
 
