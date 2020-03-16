@@ -7,7 +7,7 @@
 ![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/03/16/Popo%E6%88%AA%E5%9B%BE2020316234123-1584373317560.png)
 
 采用BIO模型的服务端通常都是一个独立的Acceptor线程负责监听客户端连接，他接受到客户端连接请求之后为每个客户端创建一个新的线程进行处理。这样导致**服务端的线程个数和客户端并发访问数呈1：1**，当并发访问过大，系统会出现线程堆栈溢出、创建失败等问题。
-[示例代码]()
+[示例代码](https://github.com/pallcard/learn-java/blob/master/src/main/java/com/wishhust/net/netty/ "DynamicProgramming")
 
 ### BIO优化
 
