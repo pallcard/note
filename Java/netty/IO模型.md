@@ -30,7 +30,8 @@ Linux提供select/poll，进程通过将一个和多个fd传递给select/poll系
 ![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/03/16/Popo%E6%88%AA%E5%9B%BE20203160192-1584289151326.png)
 
 ## I/O多路复用
-
+### 应用场景
+* 服务器需要同时处理多个处于
 
 
 
