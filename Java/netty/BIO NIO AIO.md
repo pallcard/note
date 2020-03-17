@@ -37,7 +37,7 @@ NIO所有数据都是用缓冲区处理的，缓冲区实质就是一个数组�
 3. flip()         此时capcity = 8, position = 0, limit = 5
 4. clear()        此时capcity = 8, position = 0, limit = 8
 
-### 缓冲区 Buffer
+### 缓冲区 Buffer![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/03/17/Popo%E6%88%AA%E5%9B%BE2020317233514-1584459592878.png)
 
 
 
