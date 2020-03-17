@@ -36,8 +36,8 @@ NIO所有数据都是用缓冲区处理的，缓冲区实质就是一个数组�
 2. 读入5个字节，   此时capcity = 8, position = 5, limit = 8
 3. flip()         此时capcity = 8, position = 0, limit = 5
 4. clear()        此时capcity = 8, position = 0, limit = 8
-z
 
+### 缓冲区 Buffer
 
 
 
