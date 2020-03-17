@@ -44,7 +44,7 @@ Channel是一个通道，网络数据通过Channel读取和写入，通道与流
 ![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/03/17/1584459841491-1584459841500.png)
 
 ### 多路复用器 Selector
-多路复用器提供选择已经就绪的任务的能力，简单来讲，Selector会不断地轮询注册在其上的Channel,如果Channel上发生了读或写事件，这个Channel就处于就绪状态，会被Selector轮询出来，通过SelectorKey获取就绪Channel的集合
+多路复用器提供选择已经就绪的任务的能力，简单来讲，Selector会不断地轮询注册在其上的Channel,如果Channel上发生了读或写事件，这个Channel就处于就绪状态，会被Selector轮询出来，通过SelectorKey获取就绪Channel的集合，然后进行I/O操作。
 
 
 
