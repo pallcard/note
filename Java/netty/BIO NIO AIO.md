@@ -40,4 +40,4 @@ NIO所有数据都是用缓冲区处理的，缓冲区实质就是一个数组�
 4. clear()        此时capcity = 8, position = 0, limit = 8
 
 ### 通道 Channel
-Channel是一个通道，
+Channel是一个通道，网络数据通过Channel读取和写入，通道与流的不同之处
