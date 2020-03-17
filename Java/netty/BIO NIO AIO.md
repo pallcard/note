@@ -32,7 +32,8 @@ NIO所有数据都是用缓冲区处理的，缓冲区实质就是一个数组�
 * position：下一个被读或写的下标
 * limit：第一个不被读或写的下标
 
-1. 新建8字节缓冲区，此时capcity = 7, position = 7
+1. 新建8字节缓冲区，此时capcity = 8, position = 8, limit = 8
+2. 读入5个
 
 
 
