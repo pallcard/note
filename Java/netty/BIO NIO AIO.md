@@ -41,3 +41,7 @@ NIO所有数据都是用缓冲区处理的，缓冲区实质就是一个数组�
 
 ### 通道 Channel
 Channel是一个通道，网络数据通过Channel读取和写入，通道与流的不同之处在于通道是全双工的，可读可写。
+![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/03/17/1584459841491-1584459841500.png)
+
+### 多路复用器 Selector
+
