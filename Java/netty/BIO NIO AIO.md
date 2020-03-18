@@ -49,7 +49,7 @@ Channel是一个通道，网络数据通过Channel读取和写入，通道与流
 [示例代码](https://github.com/pallcard/learn-java/blob/master/src/main/java/com/wishhust/net/netty/nio "nio")
 
 ## AIO
-NIO 2.0的异步套套接字通道是
+NIO 2.0的异步套套接字通道是真正的异步非阻塞I/O，对应UNIX网络编程中事件驱动I/O。
 
 [示例代码](https://github.com/pallcard/learn-java/blob/master/src/main/java/com/wishhust/net/netty/aio "aio")
 
