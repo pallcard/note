@@ -72,7 +72,7 @@ AIO 是真正的异步I/O，在异步I/O操作时传递信号变量，当操作�
 |吞吐量|低|中|高|高|
 
 ## 其他
-JDK NIO的bug， 
+JDK NIO的epoll bug，他会导致Selector空轮询，最终导致cpu 100%。
 
 
 
