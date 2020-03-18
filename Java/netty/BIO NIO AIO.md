@@ -61,6 +61,11 @@ NIO 的Selector是基于epool实现的，只能算非阻塞I/O,
 AIO 是真正的异步I/O，在异步I/O操作时传递信号变量，当操作完成之后会回调相关方法。
 
 
+|column1|BIO|BIO2|NIO|AIO|
+|-|-|-|
+|content1|content2|content3|
+
+
 
 
 
