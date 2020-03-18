@@ -63,7 +63,9 @@ AIO 是真正的异步I/O，在异步I/O操作时传递信号变量，当操作�
 
 |column1|BIO|BIO2|NIO|AIO|
 |-|-|-|
-|content1|content2|content3|
+|客户端个数：I/O线程|1：1|M:N|M:1|M：0|
+
+
 
 
 
