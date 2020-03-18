@@ -58,6 +58,8 @@ NIO 2.0的异步套套接字通道是真正的异步非阻塞I/O，对应UNIX网
 ### 异步非阻塞I/O
 NIO 的Selector是基于epool实现的，只能算非阻塞I/O,
 
+AIO 是真正的异步I/O，在异步I/O操作
+
 
 
 
