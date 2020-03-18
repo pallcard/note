@@ -56,7 +56,7 @@ NIO 2.0的异步套套接字通道是真正的异步非阻塞I/O，对应UNIX网
 ## 概念
 
 ### 异步非阻塞I/O
-NIO
+NIO 的Selector是基于epool实现的，只能算非阻塞I/O,
 
 
 
