@@ -53,7 +53,7 @@ NIO 2.0的异步套套接字通道是真正的异步非阻塞I/O，对应UNIX网
 
 [示例代码](https://github.com/pallcard/learn-java/blob/master/src/main/java/com/wishhust/net/netty/aio "aio")
 
-## 概念
+## 概念&比较
 
 ### 异步非阻塞I/O
 NIO 的Selector是基于epool实现的，只能算非阻塞I/O,
