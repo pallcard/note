@@ -75,19 +75,19 @@ key列显示MySQL实际决定使用的键（索引）
 
  
 
-八、ref
+### ref
 
 表示上述表的连接匹配条件，即哪些列或常量被用于查找索引列上的值
 
  
 
-九、rows
+### rows
 
  表示MySQL根据表统计信息及索引选用情况，估算的找到所需的记录所需要读取的行数
 
  
 
-十、Extra
+### Extra
 
 该列包含MySQL解决查询的详细信息,有以下几种情况：
 
@@ -103,4 +103,13 @@ Impossible where：这个值强调了where语句会导致没有符合条件的�
 
 Select tables optimized away：这个值意味着仅通过使用索引，优化器可能仅从聚合函数结果中返回一行
 
+### 总结：
+• EXPLAIN不会告诉你关于触发器、存储过程的信息或用户自定义函数对查询的影响情况
+• EXPLAIN不考虑各种Cache
+• EXPLAIN不能显示MySQL在执行查询时所作的优化工作
+• 部分统计信息是估算的，并非精确值
+• EXPALIN只能解释SELECT操作，其他操作要重写为SELECT后查看执行计划。
 
+参考：https://www.cnblogs.com/xuanzhi201111/p/4175635.html
+
+ 
