@@ -5,6 +5,6 @@
 explain select * from TB_ORDER
 ```
 结果：	
-|id|column2|column3|
+|id|select_type|table|partitions|type|posssible_keys|key|key_len
 |-|-|-|
 |content1|content2|content3|
