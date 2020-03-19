@@ -5,6 +5,7 @@
 explain select * from TB_ORDER
 ```
 结果：	
-|id|select_type|table|partitions|type|posssible_keys|key|key_len
+|id|select_type|table|partitions|type|posssible_keys|key|key_len|ref|rows|filtered|Extra|
 |-|-|-|
-|content1|content2|content3|
+|1|SIMPLE|	TB_ORDER		ALL					1794	100	
+
