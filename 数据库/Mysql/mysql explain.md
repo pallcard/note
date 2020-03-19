@@ -9,6 +9,12 @@ explain select * from TB_ORDER
 |-|-|-|-|-|-|-|-|-|-|-|-|
 |1|SIMPLE|TB_ORDER|<null>|ALL|<null>|<null>|<null>|<null>|1794|100|<null>	
 
+## 字段说明
+### id
+SQL执行的顺序的标识,SQL从大到小的执行
+* id相同时，执行顺序由上至下
+
+
 
 
 
