@@ -86,6 +86,13 @@ public class StringBufferRemoveSync {
 * notify/notifyAll
     当一个线程调用一个对象的notify()方法时， 调度器会从所有处于该对象等待队列（_WaitSet）的线程中取出任意一个线程， 将其添加到入口队列(_EntryList) 中. 然后在入口队列中的多个线程就会竞争对象的锁， 得到锁的线程就可以继续执行。 如果等待队列中（_WaitSet）没有线程， notify()方法不会产生任何作用。notifyAll() 和notify()工作机制一样， 区别在于notifyAll()会将等待队列（_WaitSet）中所有的线程都添加到入口队列中（_EntryList）
 
+### await和signal/signalAll
+java.util.concurrent 类库中提供了 Condition 类来实现线程之间的协调，可以在 Condition 上调用 await() 方法使线程等待，其它线程调用 signal() 或 signalAll() 方法唤醒等待的线程。
+
+相比于 wait() 这种等待方式，await() 可以指定等待的条件，因此更加灵活。
+
+
+
 
 ## 参考
 https://blog.csdn.net/javazejian/article/details/72828483
