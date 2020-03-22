@@ -23,7 +23,7 @@ AtomicInteger中incrementAndGet调用了unsafe.getAndAddInt方法。
     }
 ```
 
-Unsafe中getAndAddInt()如下，首先通过getIntVolatile获取原来的值（expect），然后调用cas（compareAndSwapInt），判断obj的值和expect值是否相等，相等
+Unsafe中getAndAddInt()如下，首先通过getIntVolatile获取原来的值（expect），然后调用cas（compareAndSwapInt(obj, offset, expect, update)），判断obj的值和expect值是否相等，相等则
 
 ```java
 // var1 对象， var2 偏移量， 增加的值
