@@ -31,8 +31,9 @@ synchronized 是 Java 中的关键字，是利用锁的机制来实现同步的�
 6. 构造方法不能使用synchronized，但是可以使用synchronized代码块
 
 ## 代码
-[示例代码](https://github.com/pallcard/learn-java/blob/master/src/main/java/com/wishhust/net/netty/bio2 "bio2")
-
+[示例代码](https://github.com/pallcard/learn-java/blob/master/src/main/java/com/wishhust/concurrent/SynchronizedDemo.java "SynchronizedDemo")
+[示例代码](https://github.com/pallcard/learn-java/blob/master/src/main/java/com/wishhust/concurrent/SynchronizedDemo2.java "SynchronizedDemo")
+[对象锁类锁](https://github.com/pallcard/learn-java/blob/master/src/main/java/com/wishhust/concurrent/SynchronizedDemo3.java "SynchronizedDemo")
 
 
 
