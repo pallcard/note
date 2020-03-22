@@ -35,7 +35,7 @@ ObjectMonitor中有两个队列，_WaitSet 和 _EntryList，用来保存ObjectWa
 
 * 总结
     同步代码块：先执行monitorenter获取monitor，monitorexit 释放monitor.
-    同步方法：先查看ACC_SYNCHRONIZED访问标准，若干设置了，先获取monitor，然后释放
+    同步方法：先查看ACC_SYNCHRONIZED访问标准，若干设置了，先获取monitor，然后释放monitor.
 
 ## 参考
 https://blog.csdn.net/javazejian/article/details/72828483
