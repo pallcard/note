@@ -25,7 +25,8 @@ ObjectMonitor中有两个队列，_WaitSet 和 _EntryList，用来保存ObjectWa
 
 ![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/03/22/1584848963527-1584848963736.png)
 
-原文链接：https://blog.csdn.net/javazejian/article/details/72828483
+## 参考
+https://blog.csdn.net/javazejian/article/details/72828483
 
 
 
