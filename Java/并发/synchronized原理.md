@@ -37,6 +37,13 @@ ObjectMonitor中有两个队列，_WaitSet 和 _EntryList，用来保存ObjectWa
     1. 同步代码块：先执行monitorenter获取monitor，monitorexit 释放monitor。
     2. 同步方法：先查看ACC_SYNCHRONIZED访问标准，若干设置了，先获取monitor，然后释放monitor。
 
+### 锁优化
+锁的状态总共有四种，无锁状态、偏向锁、轻量级锁和重量级锁。随着锁的竞争，锁可以从偏向锁升级到轻量级锁，再升级的重量级锁，但是锁的升级是单向的。
+
+
+
+
+
 ## 参考
 https://blog.csdn.net/javazejian/article/details/72828483
 
