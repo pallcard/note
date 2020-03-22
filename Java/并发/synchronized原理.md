@@ -22,8 +22,9 @@ Java 虚拟机中同步（synchronized）是基于进入和退出Monitor对象�
 重量级锁也就是通常说synchronized的对象锁，锁标识位为10，其中指针指向的是monitor对象（也称为管程或监视器锁）的起始地址，在Java虚拟机(HotSpot)中，monitor是由ObjectMonitor实现的。
 
 ObjectMonitor中有两个队列，_WaitSet 和 _EntryList，用来保存ObjectWaiter对象列表( 每个等待锁的线程都会被封装成ObjectWaiter对象)，(**思考:_EntryList和_WaitSet设计的原因，可能原因是synchronized是可重人锁，如_EntryList会出现重复的线程，带是拿锁执行只有改线程拿到就可以执行**)，_owner指向持有ObjectMonitor对象的线程，当多个线程同时访问一段同步代码时，首先会进入 _EntryList 集合，当线程获取到对象的monitor 后进入 _Owner 区域并把monitor中的owner变量设置为当前线程同时monitor中的计数器count加1，若线程调用 wait() 方法，将释放当前持有的monitor，owner变量恢复为null，count自减1，同时该线程进入 WaitSe t集合中等待被唤醒。若当前线程执行完毕也将释放monitor(锁)并复位变量的值，以便其他线程进入获取monitor(锁)。
-————————————————
-版权声明：本文为CSDN博主「zejian_」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+
+![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/03/22/1584848963527-1584848963736.png)
+
 原文链接：https://blog.csdn.net/javazejian/article/details/72828483
 
 
