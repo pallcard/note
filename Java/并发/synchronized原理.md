@@ -19,9 +19,9 @@ Java 虚拟机中同步（synchronized）是基于进入和退出Monitor对象�
 
 ### 重量级锁
 
-重量级锁也就是通常说synchronized的对象锁，锁标识位为10，其中指针指向的是monitor对象（也称为管程或监视器锁）的起始地址
+重量级锁也就是通常说synchronized的对象锁，锁标识位为10，其中指针指向的是monitor对象（也称为管程或监视器锁）的起始地址，在Java虚拟机(HotSpot)中，monitor是由ObjectMonitor实现的。
 
-
+ObjectMonitor
 
 
 
