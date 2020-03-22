@@ -23,9 +23,10 @@ AtomicInteger中incrementAndGet调用了unsafe.getAndAddInt方法。
     }
 ```
 
-Unsafe中getAndAddInt()如下，
+Unsafe中getAndAddInt()如下，首先通过getIntVolatile获取原来的值，然后
 
 ```java
+// var1 对象， var2 偏移量， 增加的值
 public final int getAndAddInt(Object var1, long var2, int var4) {
     int var5;
     do {
