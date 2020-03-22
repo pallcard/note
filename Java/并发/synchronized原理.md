@@ -34,8 +34,8 @@ ObjectMonitor中有两个队列，_WaitSet 和 _EntryList，用来保存ObjectWa
     方法级的同步是隐式，即无需通过字节码指令来控制的，它实现在方法调用和返回操作之中。JVM可以从方法常量池中的方法表结构(method_info Structure) 中的 ACC_SYNCHRONIZED 访问标志区分一个方法是否同步方法。当方法调用时，调用指令将会 检查方法的 ACC_SYNCHRONIZED 访问标志是否被设置，如果设置了，执行线程将先持有monitor（虚拟机规范中用的是管程一词）， 然后再执行方法，最后再方法完成(无论是正常完成还是非正常完成)时释放monitor。
 
 * 总结
-    代码块先执行monitorenter获取monitor，monitorexit 释放monitor.
-    fa
+    同步代码块：先执行monitorenter获取monitor，monitorexit 释放monitor.
+    同步方法：先查看ACC_SYNCHRONIZED访问标准，若干设置了，先获取monitor，然后释放
 
 ## 参考
 https://blog.csdn.net/javazejian/article/details/72828483
