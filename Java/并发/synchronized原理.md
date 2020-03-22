@@ -71,7 +71,7 @@ public class StringBufferRemoveSync {
 ```
 
 ### 线程中断
-当一个线程处于**被阻塞状态**或者试图执行一个阻塞操作时，使用`Thread.interrupt()`方式中断该线程，注意此时将会抛出一个InterruptedException的异常，同时中断状态将会被复位(由中断状态改为非中断状态)
+当一个线程处于**被阻塞状态**或者试图执行一个阻塞操作时，使用`Thread.interrupt()`方式中断该线程，注意此时将会抛出一个InterruptedException的异常(该异常必须捕捉无法向外抛出)，同时中断状态将会被复位(由中断状态改为非中断状态)
 
 处于**运行期且非阻塞**的状态的线程，这种情况下，直接调用`Thread.interrupt()`中断线程是不会得到任响应的，需要我们手动（`Thread.isInterrupted()`）进行中断检测并结束程序
 
