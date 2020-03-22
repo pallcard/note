@@ -75,6 +75,10 @@ public class StringBufferRemoveSync {
 
 处于**运行期且非阻塞**的状态的线程，这种情况下，直接调用`Thread.interrupt()`中断线程是不会得到任响应的，需要我们手动（`Thread.isInterrupted()`）进行中断检测并结束程序
 
+### notify/notifyAll和wait
+
+* ea
+
 
 ## 参考
 https://blog.csdn.net/javazejian/article/details/72828483
