@@ -23,7 +23,7 @@ AtomicInteger中incrementAndGet调用了unsafe.getAndAddInt方法。
     }
 ```
 
-Unsafe中getAndAddInt()如下，首先通过getIntVolatile获取原来的值（expect），然后调用cas（compareAndSwapInt(obj, offset, expect, update)），判断obj的值和expect值是否相等，相等则
+Unsafe中getAndAddInt()如下，首先通过getIntVolatile获取原来的值（expect），然后调用cas（compareAndSwapInt(obj, offset, expect, update)），判断obj的值和expect值是否相等，相等则更新
 
 ```java
 // var1 对象， var2 偏移量， 增加的值
@@ -60,6 +60,11 @@ public class AtomicInteger extends Number implements java.io.Serializable {
     ... ...
 }
 ```
+
+
+CAS可以保证一次的读-改-写操作是原子操作，在单处理器上该操作容易实现，CPU提供了两种方法来实现多处理器的原子操作：总线加锁或者缓存加锁。
+* 总线加锁
+缓存加锁
 
 
 
