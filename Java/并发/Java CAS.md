@@ -14,12 +14,16 @@ public class JMMDemo {
   }
 }
 ```
-
+AtomicInteger中incrementAndGet调用了unsafe.getAndAddInt方法。
 ```java
-public final int getAndIncrement() {
-    return unsafe.getAndAddInt(this, valueOffset, 1);
-}
+// AtomicInteger.java
+
+    public final int incrementAndGet() {
+        return unsafe.getAndAddInt(this, valueOffset, 1) + 1;
+    }
 ```
+
+
 
 ```java
 public final int getAndAddInt(Object var1, long var2, int var4) {
