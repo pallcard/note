@@ -11,11 +11,11 @@ Java 虚拟机中同步（synchronized）是基于进入和退出Monitor对象�
 
 ### Mark Word
 
-中Mark Word在默认情况下存储着对象的HashCode、分代年龄、锁标记位等以下是32位JVM的Mark Word默认存储结构。对象头的信息是与对象自身定义的数据没有关系的额外存储成本，因此考虑到JVM的空间效率，Mark Word 被设计成为一个非固定的数据结构，
+中Mark Word在默认情况下存储着对象的HashCode、分代年龄、锁标记位等以下是32位JVM的Mark Word默认存储结构。对象头的信息是与对象自身定义的数据没有关系的额外存储成本，因此考虑到JVM的空间效率，Mark Word 被设计成为一个非固定的数据结构。
 
 |锁状态|25bit|4bit|1bit是否是偏向锁|2bit 锁标志位|
-|-|-|-|
-|无锁状态|对象HashCode|content3|
+|-|-|-|-|-|
+|无锁状态|对象HashCode|对象分代年龄|0|01|
 
 
 
