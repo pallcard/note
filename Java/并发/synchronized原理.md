@@ -90,7 +90,7 @@ public class StringBufferRemoveSync {
 
 ### await和signal/signalAll
 
-[WaitNotifyDemo](https://github.com/pallcard/learn-java/blob/master/src/main/java/com/wishhust/concurrent/WaitNotifyDemo.java "WaitNotifyDemo")
+[AwaitSignalDemo](https://github.com/pallcard/learn-java/blob/master/src/main/java/com/wishhust/concurrent/AwaitSignalDemo.java "AwaitSignalDemo")
 
 java.util.concurrent 类库中提供了 Condition 类来实现线程之间的协调，可以在 Condition 上调用 await() 方法使线程等待，其它线程调用 signal() 或 signalAll() 方法唤醒等待的线程。
 
