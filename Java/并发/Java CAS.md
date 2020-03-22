@@ -50,7 +50,7 @@ public class AtomicInteger extends Number implements java.io.Serializable {
 
     public final int getAndIncrement() {
          return unsafe.getAndAddInt(this, valueOffset, 1);
-}
+    }
 }
 ```
 
