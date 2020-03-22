@@ -22,7 +22,8 @@ synchronized 是 Java 中的关键字，是利用锁的机制来实现同步的�
 * synchronized(类.class) {}
 * 修饰静态方法
 
-##
+## 总结
+1. 多个对象获取同一个对象锁，同步
 
 
 
