@@ -10,3 +10,18 @@ Java 虚拟机中同步（synchronized）是基于进入和退出Monitor对象�
 * 对象头：Mark Word， Class Metadata Address（指向类元信息）
 
 ### Mark Word
+
+|锁状态|25bit|4bit|1bit是否是偏向锁|2bit 锁标志位|
+|-|-|-|
+|content1|content2|content3|
+
+
+
+
+
+
+
+
+
+
+
