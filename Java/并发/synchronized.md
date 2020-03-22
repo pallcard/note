@@ -28,7 +28,10 @@ synchronized 是 Java 中的关键字，是利用锁的机制来实现同步的�
 3. 对象锁和类锁是独立的，湖北干扰，可以理解为类锁是类的class对象锁，和普通对象锁是不同的对象锁。
 4. synchronized关键字不能继承。对于父类中的 synchronized 修饰方法，子类在覆盖该方法时，默认情况下不是同步的，必须显示的使用 synchronized 关键字修饰才行。
 5. 接口不能使用synchronized
-6. 构造方法不能使用synchronized，但是可以使用synchronized代码
+6. 构造方法不能使用synchronized，但是可以使用synchronized代码块
+
+## 代码
+[示例代码](https://github.com/pallcard/learn-java/blob/master/src/main/java/com/wishhust/net/netty/bio2 "bio2")
 
 
 
