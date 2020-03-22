@@ -13,12 +13,14 @@ synchronized 是 Java 中的关键字，是利用锁的机制来实现同步的�
 
 * synchronized(this|object) {}
 
-修饰非静态方法
+* 修饰非静态方法
 
 ### 类锁
 
 在 Java 中，针对每个类也有一个锁，可以称为“类锁”，类锁实际上是通过对象锁实现的，即类的 Class 对象锁。每个类只有一个 Class 对象，所以每个类只有一个类锁。
 
+* synchronized(类.class) {}
+* 修饰静态方法
 
 
 
