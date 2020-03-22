@@ -1,5 +1,6 @@
 # Java CAS
 
+例子如下：JMMDemo类的属性cnt为
 ```java
 public class JMMDemo {
   private AtomicInteger cnt = new AtomicInteger();
