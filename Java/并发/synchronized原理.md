@@ -7,4 +7,6 @@ Java 虚拟机中同步（synchronized）是基于进入和退出Monitor对象�
 在JVM中，对象在内存分布三块区域：对象头、实例数据和对齐填充。
 * 实例变量：存放类（包括父类）属性信息，数组长度，4字节对齐。
 * 对齐填充：虚拟机要求对象起始地址必须是8字节的整数倍
-* 对象头：Mark
+* 对象头：Mark Word， Class Metadata Address（指向类元信息）
+
+### Mark Word
