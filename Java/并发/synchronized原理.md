@@ -50,6 +50,28 @@ ObjectMonitor中有两个队列，_WaitSet 和 _EntryList，用来保存ObjectWa
     轻量级锁失败后，虚拟机为了**避免线程真实地在操作系统层面挂起**，还会进行一项称为自旋锁的优化手段。
 4. 锁消除
     Java虚拟机在JIT编译时(可以简单理解为当某段代码即将第一次被执行时进行编译，又称即时编译)，通过对运行上下文的扫描，去除不可能存在共享资源竞争的锁，通过这种方式消除没有必要的锁，可以节省毫无意义的请求锁时间。
+```java
+public class StringBufferRemoveSync {
+
+    public void add(String str1, String str2) {
+        //StringBuffer是线程安全,由于sb只会在append方法中使用,不可能被其他线程引用
+        //因此sb属于不可能共享的资源,JVM会自动消除内部的锁
+        StringBuffer sb = new StringBuffer();
+        sb.append(str1).append(str2);
+    }
+
+    public static void main(String[] args) {
+        StringBufferRemoveSync rmsync = new StringBufferRemoveSync();
+        for (int i = 0; i < 10000000; i++) {
+            rmsync.add("abc", "123");
+        }
+    }
+
+}
+————————————————
+版权声明：本文为CSDN博主「zejian_」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/javazejian/article/details/72828483
+```
 
 
 
