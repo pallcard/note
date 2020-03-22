@@ -78,8 +78,10 @@ public class StringBufferRemoveSync {
 ### notify/notifyAll和wait
 
 * wait() 
-    总是在一个循环中被调用，挂起当前线程来等待一个条件的成立。 Wait调用会一直等到其他线程调用notifyAll()时才返回。
+    总是在一个循环中被调用，挂起当前线程来等待一个条件的成立。 Wait调用会一直等到其他线程调用notifyAll()时才返回。当一个线程在执行synchronized 的方法内部，调用了wait()后， 该线程会释放该对象的锁， 然后该线程会被添加到该对象的等待队列中（waiting queue）, 只要该线程在等待队列中， 就会一直处于闲置状态， 不会被调度执行。 要注意wait()方法会强迫线程先进行释放锁操作，所以在调用wait()时， 该线程必须已经获得锁，否则会抛出异常。
 
+* notify/notifyAll
+    
 
 ## 参考
 https://blog.csdn.net/javazejian/article/details/72828483
