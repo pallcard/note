@@ -77,7 +77,8 @@ public class StringBufferRemoveSync {
 
 ### notify/notifyAll和wait
 
-* ea
+* wait() 
+    总是在一个循环中被调用，挂起当前线程来等待一个条件的成立。 Wait调用会一直等到其他线程调用notifyAll()时才返回。
 
 
 ## 参考
