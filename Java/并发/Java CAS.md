@@ -64,7 +64,8 @@ public class AtomicInteger extends Number implements java.io.Serializable {
 
 CAS可以保证一次的读-改-写操作是原子操作，在单处理器上该操作容易实现，CPU提供了两种方法来实现多处理器的原子操作：总线加锁或者缓存加锁。
 * 总线加锁
-缓存加锁
+    总线加锁就是就是使用处理器提供的一个LOCK#信号，当一个处理器在总线上输出此信号时，其他处理器的请求将被阻塞住,那么该处理器可以独占使用共享内存。
+* 缓存加锁
 
 
 
