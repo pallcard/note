@@ -1,6 +1,6 @@
 # Java CAS
 
-例子如下：JMMDemo类的属性cnt为
+例子如下：JMMDemo类的属性cnt为AtomicInteger类型，成员方法add(),调用了cnt.incrementAndGet()，然后在看incrementAndGet()。
 ```java
 public class JMMDemo {
   private AtomicInteger cnt = new AtomicInteger();
