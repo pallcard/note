@@ -3,5 +3,5 @@
 ![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/03/25/1585147300954-1585147300978.png)
 2. 在项目中新建一个文件夹，如下我在resources目录下新建了一个jdk文件夹，然后将第二步解压的文件复制到这里。
 ![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/03/25/1585147176905-1585147177052.png)
-3.  到
+3.  到project struct中，在sdks下，修改sourcepath指向直接
 ![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/03/25/1585147405431-1585147405432.png)
