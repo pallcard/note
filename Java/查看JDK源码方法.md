@@ -7,4 +7,4 @@
 ![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/03/25/1585147405431-1585147405432.png)
 4. 去掉下图中的对勾
 ![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/03/25/1585147563641-1585147563645.png)
-5. 完成以上步骤就可以
+5. 完成以上步骤就可以编写test类，进行单步调试代码了。
