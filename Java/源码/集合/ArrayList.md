@@ -4,6 +4,7 @@
 public class ArrayList<E> extends AbstractList<E>
         implements List<E>, RandomAccess, Cloneable, java.io.Serializable
 {
+    // 默认大小 10
     private static final int DEFAULT_CAPACITY = 10;
     transient Object[] elementData;
     // 此属性存在于 AbstractList中
