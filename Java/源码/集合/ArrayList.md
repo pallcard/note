@@ -16,3 +16,16 @@ public class ArrayList<E> extends AbstractList<E>
 
 * modCount 作用：
     在使用迭代器遍历的时候，用来检查列表中的元素是否发生结构性变化（列表元素数量发生改变）了，主要在多线程环境下需要使用，防止一个线程正在迭代遍历，另一个线程修改了这个列表的结构。
+
+* RandomAccess 作用
+
+
+
+
+
+
+
+
+
+
+
