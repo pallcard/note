@@ -19,7 +19,18 @@ public class ArrayList<E> extends AbstractList<E>
 
 * RandomAccess 作用
 ArrayList用for循环遍历比iterator迭代器遍历快，LinkedList用iterator迭代器遍历比for循环遍历快，这时就需要用instanceof来判断List集合子类是否实现RandomAccess接口。
+```java
+    @SuppressWarnings("unchecked")
+    public static <T> int binarySearch(List<? extends T> list, T key, Comparator<? super T> c) {
+        if (c==null)
+            return binarySearch((List<? extends Comparable<? super T>>) list, key);
 
+        if (list instanceof RandomAccess || list.size()<BINARYSEARCH_THRESHOLD)
+            return Collections.indexedBinarySearch(list, key, c);
+        else
+            return Collections.iteratorBinarySearch(list, key, c);
+    }
+```
 
 
 
