@@ -24,7 +24,7 @@ ArrayList用for循环遍历比iterator迭代器遍历快，LinkedList用iterator
     public static <T> int binarySearch(List<? extends T> list, T key, Comparator<? super T> c) {
         if (c==null)
             return binarySearch((List<? extends Comparable<? super T>>) list, key);
-	// 判断根据是否实现RandomAccess接口，来调用不同的方法	
+	// 根据是否实现RandomAccess接口，判断使用索引还是iterator	
         if (list instanceof RandomAccess || list.size()<BINARYSEARCH_THRESHOLD)
             return Collections.indexedBinarySearch(list, key, c);
         else
