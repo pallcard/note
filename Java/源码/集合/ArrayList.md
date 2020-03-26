@@ -6,7 +6,7 @@ public class ArrayList<E> extends AbstractList<E>
 {
     private static final int DEFAULT_CAPACITY = 10;
     transient Object[] elementData;
-    // 此
+    // 此属性存在于 AbstractList中
     protected transient int modCount = 0;
     ......
 }
