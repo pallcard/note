@@ -73,6 +73,7 @@ add函数先通过ensureCapacityInternal来确保数组的容量足够，
         int newCapacity = oldCapacity + (oldCapacity >> 1); // 1.5倍
         if (newCapacity - minCapacity < 0)
             newCapacity = minCapacity;
+        // MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8;
         if (newCapacity - MAX_ARRAY_SIZE > 0)
             newCapacity = hugeCapacity(minCapacity);
         // minCapacity is usually close to size, so this is a win:
