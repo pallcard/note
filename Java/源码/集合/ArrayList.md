@@ -44,9 +44,8 @@ ArrayList用for循环遍历比iterator迭代器遍历快，LinkedList用iterator
         elementData[size++] = e;
         return true;
     }
-
 ```
-
+add
 
 
 ## ArrayList迭代器
