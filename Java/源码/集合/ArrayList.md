@@ -38,6 +38,12 @@ ArrayList用for循环遍历比iterator迭代器遍历快，LinkedList用iterator
 
 ### add
 ```java
+    public boolean add(E e) {
+        // 确保list的容量够添加元素
+        ensureCapacityInternal(size + 1);  // Increments modCount!!
+        elementData[size++] = e;
+        return true;
+    }
 
 ```
 
