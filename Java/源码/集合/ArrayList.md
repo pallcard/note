@@ -2,7 +2,7 @@
 
 ## ArrayList的属性
 
-```
+```java
 public class ArrayList<E> extends AbstractList<E>
         implements List<E>, RandomAccess, Cloneable, java.io.Serializable
 {
