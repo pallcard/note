@@ -36,7 +36,7 @@ ArrayList用for循环遍历比iterator迭代器遍历快，LinkedList用iterator
 
 ## ArrayList迭代器
 
-Itr是ArrayList的一个内部类，cursor
+Itr是ArrayList的一个内部类，cursor下一个元素下标， lastRet上一次返回值下标， expectedModCount用户判断
 
 ```java
 public class ArrayList<E> extends AbstractList<E>
