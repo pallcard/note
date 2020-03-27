@@ -45,7 +45,20 @@ ArrayList用for循环遍历比iterator迭代器遍历快，LinkedList用iterator
         return true;
     }
 ```
-add函数先通过ensureCapacityInternal来确保数组的容量
+add函数先通过ensureCapacityInternal来确保数组的容量足够，
+```java
+    private void ensureCapacityInternal(int minCapacity) {
+        // 增加修改次数 并扩大数组容量(可能，只有当最新的容量大于当前数组的容量时进行扩容)
+        ensureExplicitCapacity(calculateCapacity(elementData, minCapacity));
+    }
+
+    private void ensureExplicitCapacity(int minCapacity) {
+        modCount++;
+        // overflow-conscious code
+        if (minCapacity - elementData.length > 0)
+            grow(minCapacity);
+    }
+```
 
 
 ## ArrayList迭代器
