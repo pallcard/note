@@ -142,7 +142,7 @@ public class ArrayList<E> extends AbstractList<E>
 
 ## SubList
 
-实际上还是对于原list在进行操作。部分代码
+实际上还是对于原list在进行操作。部分代码如下：
 
 ```java
  private class SubList extends AbstractList<E> implements RandomAccess {
