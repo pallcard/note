@@ -134,7 +134,8 @@ public class ArrayList<E> extends AbstractList<E>
         private final int offset;
         int size;
 
-
+...
+}
 
 
 ```
