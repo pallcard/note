@@ -45,7 +45,7 @@ ArrayList用for循环遍历比iterator迭代器遍历快，LinkedList用iterator
         return true;
     }
 ```
-add
+add函数先通过ensureCapacityInternal来确保数组的容量
 
 
 ## ArrayList迭代器
