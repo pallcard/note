@@ -37,6 +37,10 @@ ArrayList用for循环遍历比iterator迭代器遍历快，LinkedList用iterator
 ## ArrayList的几个方法
 
 ### add
+```java
+
+```
+
 
 
 ## ArrayList迭代器
