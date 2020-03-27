@@ -141,12 +141,24 @@ public class ArrayList<E> extends AbstractList<E>
 ```
 
 ## SubList
+
+实际上还是对于原list在进行操作。部分代码
+
 ```java
  private class SubList extends AbstractList<E> implements RandomAccess {
         private final AbstractList<E> parent;
         private final int parentOffset;
         private final int offset;
         int size;
+
+
+        public void add(int index, E e) {
+            rangeCheckForAdd(index);
+            checkForComodification();
+            parent.add(parentOffset + index, e);
+            this.modCount = parent.modCount;
+            this.size++;
+        }
 
 ...
 }
