@@ -52,11 +52,32 @@ add函数先通过ensureCapacityInternal来确保数组的容量足够，
         ensureExplicitCapacity(calculateCapacity(elementData, minCapacity));
     }
 
+    // elementData为空则返回最新需要的容量和默认容量的较大值
+    private static int calculateCapacity(Object[] elementData, int minCapacity) {
+        if (elementData == DEFAULTCAPACITY_EMPTY_ELEMENTDATA) {
+            return Math.max(DEFAULT_CAPACITY, minCapacity);
+        }
+        return minCapacity;
+    }
+
     private void ensureExplicitCapacity(int minCapacity) {
         modCount++;
         // overflow-conscious code
         if (minCapacity - elementData.length > 0)
             grow(minCapacity);
+    }
+
+    private void grow(int minCapacity) {
+        // overflow-conscious code
+        int oldCapacity = elementData.length;
+        int newCapacity = oldCapacity + (oldCapacity >> 1); // 1.5倍
+        if (newCapacity - minCapacity < 0)
+            newCapacity = minCapacity;
+        if (newCapacity - MAX_ARRAY_SIZE > 0)
+            newCapacity = hugeCapacity(minCapacity);
+        // minCapacity is usually close to size, so this is a win:
+        // 创建新数组并进行元素复制
+        elementData = Arrays.copyOf(elementData, newCapacity);
     }
 ```
 
