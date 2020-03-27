@@ -126,8 +126,18 @@ public class ArrayList<E> extends AbstractList<E>
 
 ```
 
+## SubList
+```java
+ private class SubList extends AbstractList<E> implements RandomAccess {
+        private final AbstractList<E> parent;
+        private final int parentOffset;
+        private final int offset;
+        int size;
 
 
+
+
+```
 
 
 
