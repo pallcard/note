@@ -102,9 +102,22 @@ public class ArrayList<E> extends AbstractList<E>
 
  	private class ListItr extends Itr implements ListIterator<E> {
         	ListItr(int index) {
-            	super();
-           	cursor = index;
+            		super();
+           		cursor = index;
         	}
+
+		        public E previous() {
+            checkForComodification();
+            int i = cursor - 1;
+            if (i < 0)
+                throw new NoSuchElementException();
+            Object[] elementData = ArrayList.this.elementData;
+            if (i >= elementData.length)
+                throw new ConcurrentModificationException();
+            cursor = i;
+            return (E) elementData[lastRet = i];
+        }
+
 	...
 	｝
 
