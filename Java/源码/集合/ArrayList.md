@@ -99,8 +99,20 @@ public class ArrayList<E> extends AbstractList<E>
         	int expectedModCount = modCount;
 	...
 	}
+
+ 	private class ListItr extends Itr implements ListIterator<E> {
+        	ListItr(int index) {
+            	super();
+           	cursor = index;
+        	}
+	...
+	｝
+
 ...
 }
+
+
+
 ```
 
 
