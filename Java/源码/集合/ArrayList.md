@@ -118,19 +118,19 @@ public class ArrayList<E> extends AbstractList<E>
             		return (E) elementData[lastRet = i];
         	}
 
-        public void add(E e) {
-            checkForComodification();
+        	public void add(E e) {
+            		checkForComodification();
 
-            try {
-                int i = cursor;
-                ArrayList.this.add(i, e);
-                cursor = i + 1;
-                lastRet = -1;
-                expectedModCount = modCount;
-            } catch (IndexOutOfBoundsException ex) {
-                throw new ConcurrentModificationException();
-            }
-        }
+            		try {
+                		int i = cursor;
+                		ArrayList.this.add(i, e);
+                		cursor = i + 1;
+                		lastRet = -1;
+                		expectedModCount = modCount;
+            		} catch (IndexOutOfBoundsException ex) {
+                		throw new ConcurrentModificationException();
+            		}
+        	}
 
 	...
 	｝
