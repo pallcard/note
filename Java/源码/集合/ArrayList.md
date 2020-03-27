@@ -86,7 +86,7 @@ add函数先通过ensureCapacityInternal来确保数组的容量足够，
 ## ArrayList迭代器
 
 Itr是ArrayList的一个内部类，cursor下一个元素下标， lastRet上一次返回值下标， expectedModCount用户判断在迭代过程中list是否改变，若改变抛异常。
-ListItr也是ArrayList的一个内部类，增加了设置cursor的构造器和
+ListItr也是ArrayList的一个内部类，增加了设置cursor的构造器和previous() 向前移动cursor的方法。
 
 
 ```java
