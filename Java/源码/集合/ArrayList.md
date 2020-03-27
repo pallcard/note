@@ -87,6 +87,8 @@ add函数先通过ensureCapacityInternal来确保数组的容量足够，
 
 Itr是ArrayList的一个内部类，cursor下一个元素下标， lastRet上一次返回值下标， expectedModCount用户判断在迭代过程中list是否改变，若改变抛异常。
 
+
+
 ```java
 public class ArrayList<E> extends AbstractList<E>
         implements List<E>, RandomAccess, Cloneable, java.io.Serializable
