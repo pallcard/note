@@ -48,3 +48,7 @@ MVCC 不能解决幻影读问题，Next-Key Locks 就是为了解决这个问题
 锁定一个记录上的索引，而不是记录本身
 
 ### Gap Locks
+锁定索引之间的间隙，但是不包含索引本身。
+
+### Next-Key Locks
+它是 Record Locks 和 Gap Locks 的结合，不仅锁定一个记录上的索引，也锁定索引之间的间隙。它锁定一个前开后闭区间，
