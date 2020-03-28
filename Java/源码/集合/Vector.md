@@ -19,6 +19,7 @@ public class Vector<E>
 
 ## add
 ```
+    // 使用了synchronized进行同步
     public synchronized boolean add(E e) {
         modCount++;
         ensureCapacityHelper(elementCount + 1);
