@@ -167,6 +167,11 @@ public class ArrayList<E> extends AbstractList<E>
 ```
 
 
+## 总结
+ArrayList底层使用数组实现，
+
+
+
 
 
 

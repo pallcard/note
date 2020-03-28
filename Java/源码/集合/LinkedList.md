@@ -1,6 +1,6 @@
 # LinkedList
 
-## LinkedList的
+## LinkedList的属性
 ```java
 public class LinkedList<E>
     extends AbstractSequentialList<E>
