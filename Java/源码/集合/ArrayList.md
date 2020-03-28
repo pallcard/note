@@ -192,6 +192,7 @@ public class ArrayList<E> extends AbstractList<E>
 2. 数字默认大小10。
 3. 当容量不够时，会触发扩容，扩容为1.5倍
 4. 删除元素，后面所有元素向前移动
+5. 序列化 使用
 
 
 
