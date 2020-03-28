@@ -1,5 +1,6 @@
 # LinkedList
 
+## LinkedList的
 ```java
 public class LinkedList<E>
     extends AbstractSequentialList<E>
@@ -22,6 +23,18 @@ public class LinkedList<E>
         }
     }
 
-
 }
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
