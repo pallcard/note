@@ -168,7 +168,9 @@ public class ArrayList<E> extends AbstractList<E>
 
 
 ## 总结
-ArrayList底层使用数组实现，故可以随机访问，实现了
+1. ArrayList底层使用数组实现，故可以随机访问，实现了RandomAccess 接口标识支持快速随机访问。
+2. 数字默认大小10。
+3. 
 
 
 
