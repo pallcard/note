@@ -10,7 +10,10 @@
 
 ## 接口
 
-1. 
+1. java.io.Serializable
+标识接口，
+
+2. java.io.Externalizable
 
 
 
