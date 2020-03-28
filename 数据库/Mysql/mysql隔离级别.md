@@ -16,6 +16,7 @@ MVCC 利用了多版本的思想，写操作更新最新的版本快照，而读
 #### Undo日志
 
 MVCC 的多版本指的是多个版本的快照，快照存储在 Undo 日志中，该日志通过回滚指针 ROLL_PTR 把一个数据行的所有快照连接起来。
+![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/03/28/1585408333610-1585408333698.png)
 
 
 
