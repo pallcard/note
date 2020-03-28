@@ -157,7 +157,7 @@ CyclicBarrier让一组线程到达一个屏障时被阻塞，例如，上述代�
 然后就会3个线程都会被阻塞。在CyclicBarrier的构造函数中也可以添加一个任务，到线程数达到屏障要求时，线程
 继续执行，并且构造函数中的会优先执行。
 
-## 实例
+### 实例
 
 计算银行的账单流水，使用多个线程进行计算，然后进行汇总。
 
@@ -215,7 +215,7 @@ public class BankWaterService implements Runnable{
 
 CyclicBarrier的计数器可以使用reset()方法重置，这正好解释了Cyclic循环的意思。
 
-### Semaphore类
+## Semaphore类
 
 ```java
 public class SemaphoreTest {
@@ -244,7 +244,7 @@ public class SemaphoreTest {
 ```
 Semaphore类可以控制同时访问特定资源的线程数量。例如上述代码有30个线程，但是只能有10个线程来访问数据库（打印save data）。
 
-### Exchanger类
+## Exchanger类
 ```java
 public class ExchangerTest {
 
