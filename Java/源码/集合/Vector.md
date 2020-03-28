@@ -7,6 +7,7 @@ public class Vector<E>
 {
 
     protected Object[] elementData;
+    // 集合当前大小
     protected int elementCount;
     // 扩容时，增长的大小，若此值<=0，按2倍增长
     protected int capacityIncrement;
