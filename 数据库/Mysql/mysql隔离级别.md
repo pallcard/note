@@ -35,6 +35,8 @@ TRX_ID_MIN <= TRX_ID <= TRX_ID_MAX，需要根据隔离级别再进行判断：
 在数据行快照不可使用的情况下，需要沿着 Undo Log 的回滚指针 ROLL_PTR 找到下一个快照，再进行上面的判断。
 
 #### 快照读与当前读
+1. 快照读:  select, 在进行 SELECT 操作时，可以强制指定进行加锁操作。
+2. 当前读:  INSERT、UPDATE、DELETE
 MVCC 其它会对数据库进行修改的操作（INSERT、UPDATE、DELETE）需要进行加锁操作，从而读取最新的数据。**MVCC 并不是完全不用加锁，而只是避免了 SELECT 的加锁操作。**
 
 
