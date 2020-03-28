@@ -8,6 +8,7 @@ public class ArrayList<E> extends AbstractList<E>
 {
     // 默认大小 10
     private static final int DEFAULT_CAPACITY = 10;
+    // transient关键字声明数组默认不会被序列化
     transient Object[] elementData;
     // 此属性存在于 AbstractList中
     protected transient int modCount = 0;
