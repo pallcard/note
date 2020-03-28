@@ -12,6 +12,7 @@ public class ArrayList<E> extends AbstractList<E>
     transient Object[] elementData;
     // 此属性存在于 AbstractList中
     protected transient int modCount = 0;
+    private int size;
     ......
 }
 
