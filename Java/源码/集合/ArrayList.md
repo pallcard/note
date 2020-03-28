@@ -195,7 +195,7 @@ public class ArrayList<E> extends AbstractList<E>
 5. 序列化 使用实现了 writeObject() 和 readObject() 来控制只序列化数组中有元素填充那部分内容
 
 ## 源码
-[ArrayList](https://github.com/pallcard/learn-java/blob/master/src/main/resources/jdk/jdk1_8/java/util/ArrayList.java "ArrayList")
+![ArrayList](https://github.com/pallcard/learn-java/blob/master/src/main/resources/jdk/jdk1_8/java/util/ArrayList.java "ArrayList")
 
 
 
