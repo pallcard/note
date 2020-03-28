@@ -168,7 +168,7 @@ public class ArrayList<E> extends AbstractList<E>
 
 
 ## 总结
-ArrayList底层使用数组实现，
+ArrayList底层使用数组实现，故可以随机访问，实现了
 
 
 
