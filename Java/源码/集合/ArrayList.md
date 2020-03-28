@@ -194,9 +194,10 @@ public class ArrayList<E> extends AbstractList<E>
 4. 删除元素，后面所有元素向前移动
 5. 序列化 使用实现了 writeObject() 和 readObject() 来控制只序列化数组中有元素填充那部分内容
 
+## 源码
+[ArrayList]
 
-
-
+https://github.com/pallcard/learn-java/blob/master/src/main/java/com/wishhust/arithmetic/dynamic/DynamicProgramming.java "DynamicProgramming"
 
 
 
