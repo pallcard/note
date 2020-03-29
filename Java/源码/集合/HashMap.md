@@ -33,5 +33,11 @@ public class HashMap<K,V> extends AbstractMap<K,V>
 
 ```
 
+## put
+```java
+
+
+```
+
 
 https://blog.csdn.net/carson_ho/article/details/79373134
