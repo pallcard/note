@@ -18,6 +18,11 @@ public class HashMap<K,V> extends AbstractMap<K,V>
     // 为了避免进行扩容、树形化选择的冲突，这个值不能小于 4 * TREEIFY_THRESHOLD
     static final int MIN_TREEIFY_CAPACITY = 64;
 
+    // 每个位置相当于桶
+    transient Node<K,V>[] table;
+    transient int size;
+    transient int modCount;
+
 }
 
 ```
