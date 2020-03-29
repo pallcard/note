@@ -22,6 +22,12 @@ public class HashMap<K,V> extends AbstractMap<K,V>
     transient Node<K,V>[] table;
     transient int size;
     transient int modCount;
+    // 扩容阈值（threshold）：当哈希表的大小 ≥ 扩容阈值时，就会扩容哈希表（即扩充HashMap的容量）
+    // a. 扩容 = 对哈希表进行resize操作（即重建内部数据结构），从而哈希表将具有大约两倍的桶数
+    // b. 扩容阈值 = 容量 x 加载因子
+    int threshold;
+    // 装载因子
+    final float loadFactor;
 
 }
 
