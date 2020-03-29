@@ -35,8 +35,66 @@ public class HashMap<K,V> extends AbstractMap<K,V>
 
 ## put
 ```java
+    public V put(K key, V value) {
+        return putVal(hash(key), key, value, false, true);
+    }
+```
 
-
+```java
+    final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
+                   boolean evict) {
+        Node<K,V>[] tab; Node<K,V> p; int n, i;
+        // 若哈希表的数组tab为空，则 通过resize() 创建， 延迟初始化
+        if ((tab = table) == null || (n = tab.length) == 0)
+            n = (tab = resize()).length;
+        // (n - 1) & hash 按需取 哈希码一定数量的低位 作为存储的数组下标位置
+        // 无冲突，则直接创建新结点
+        if ((p = tab[i = (n - 1) & hash]) == null)
+            tab[i] = newNode(hash, key, value, null);
+        // 有冲突
+        else {
+            Node<K,V> e; K k;
+            // 若key存在，则覆盖value值
+            if (p.hash == hash &&
+                ((k = p.key) == key || (key != null && key.equals(k))))
+                e = p;
+            // 若是红黑树，则直接在树中插入 or 更新键值对
+            else if (p instanceof TreeNode)
+                e = ((TreeNode<K,V>)p).putTreeVal(this, tab, hash, key, value);
+            // 链表
+            else {
+                for (int binCount = 0; ; ++binCount) {
+                    if ((e = p.next) == null) {
+                        // 到链表尾部，尾插
+                        p.next = newNode(hash, key, value, null);
+                        // 链表长度是否>8（8 = 桶的树化阈值），则把链表转换为红黑树
+                        if (binCount >= TREEIFY_THRESHOLD - 1) // -1 for 1st
+                            treeifyBin(tab, hash);
+                        break;
+                    }
+                    // 存在key，跳出循环
+                    if (e.hash == hash &&
+                        ((k = e.key) == key || (key != null && key.equals(k))))
+                        break;
+                    p = e;
+                }
+            }
+            // 若存在，则替换旧值
+            if (e != null) { // existing mapping for key
+                V oldValue = e.value;
+                if (!onlyIfAbsent || oldValue == null)
+                    e.value = value;
+                afterNodeAccess(e);
+                return oldValue;
+            }
+        }
+        ++modCount;
+        // 插入成功，实际存在的键值对数量size > 最大容量threshold
+        if (++size > threshold)
+            resize();
+        afterNodeInsertion(evict);
+        return null;
+    }
 ```
 
 
