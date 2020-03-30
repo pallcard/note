@@ -190,7 +190,8 @@ public class HashMap<K,V> extends AbstractMap<K,V>
     }
 ```
 ## get
-主要步骤：先通过key的hash值定位到key在数组中的位置，然后判断key是否等于该位置的值，
+
+主要步骤：先通过key的hash值定位到key在数组中的位置，然后判断key是否等于该位置的值，不等则去遍历红黑树/链表。
 
 ```java
     public V get(Object key) {
@@ -223,3 +224,4 @@ public class HashMap<K,V> extends AbstractMap<K,V>
 
 
 https://blog.csdn.net/carson_ho/article/details/79373134
+https://juejin.im/post/5a38bfdc51882525ab7be633#heading-2
