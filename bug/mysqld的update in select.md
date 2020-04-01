@@ -9,6 +9,6 @@ You can’t specify target table for update in FROM clause
 
 【如何发现】：直接执行sql
 
-【如何修复】：在select 中加一层中间表， `update tb_user set auth = 0 where user_id in (select  select user_id from tb_user where auth = 1)`
+【如何修复】：在select 中加一层中间表， `update tb_user set auth = 0 where user_id in (select id from (select user_id from tb_user where auth = 1) as a) `
 
 【总结】：***
