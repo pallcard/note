@@ -3,7 +3,7 @@ You can’t specify target table for update in FROM clause
 
 【日期】：2020-04-01
 
-【问题】: 想要将一个表中的
+【问题】: 想要将一个表中的所有已授权的改成为授权的， `update tb_user set auth = 1 where u select  `
 
 【原因】：***
 
