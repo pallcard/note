@@ -206,7 +206,7 @@ public class Thread implements Runnable {
 
 2. 采用延迟初始化，当get/set时，会为当前线程创建map对象并赋值。
 
-3. hash表采用的开放地址法，hash值是通过AtomicInteger（静态变量）存储，每次key
+3. hash表采用的开放地址法，hash值是通过AtomicInteger（静态变量）存储，每次key都是通过cas操作对类中的这个值进行增加。
 
 
 ## 参考
