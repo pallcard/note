@@ -181,7 +181,7 @@ public class Thread implements Runnable {
             // incremental rehashing due to garbage collector freeing
             // up refs in bunches (i.e., whenever the collector runs).
             int slotToExpunge = staleSlot;
-            for (int i = prevIndex(staleSlot, len); // 
+            for (int i = prevIndex(staleSlot, len); // 在左边找一个entry不空，但key为空的
                  (e = tab[i]) != null;
                  i = prevIndex(i, len))
                 if (e.get() == null)  // e.get() ==> 返回key
