@@ -122,6 +122,13 @@ public class Thread implements Runnable {
 
 ```
 
-
+#### get
+```java
+     public void remove() {
+         ThreadLocalMap m = getMap(Thread.currentThread());
+         if (m != null)
+             m.remove(this);
+     }
+```
 参考
 https://juejin.im/post/5a5efb1b518825732b19dca4
