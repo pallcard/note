@@ -93,8 +93,8 @@ public class Thread implements Runnable {
         if (map != null)
             map.set(this, value);
         else
-            createMap(t, value);
-        return value; // new ThreadLocalMap并set第一个value
+            createMap(t, value); // new ThreadLocalMap并set第一个value
+        return value; 
     }
 
 
