@@ -134,19 +134,19 @@ public class Thread implements Runnable {
              m.remove(this);
      }
 
-        private void remove(ThreadLocal<?> key) {
-            Entry[] tab = table;
-            int len = tab.length;
-            int i = key.threadLocalHashCode & (len-1);
-            for (Entry e = tab[i];
-                 e != null;
-                 e = tab[i = nextIndex(i, len)]) {
-                if (e.get() == key) {
-                    e.clear();
-                    expungeStaleEntry(i);
-                    return;
-                }
-            }
+     private void remove(ThreadLocal<?> key) {
+          Entry[] tab = table;
+          int len = tab.length;
+          int i = key.threadLocalHashCode & (len-1);
+          for (Entry e = tab[i];
+              e != null;
+              e = tab[i = nextIndex(i, len)]) {
+              if (e.get() == key) {
+                  e.clear();
+                  expungeStaleEntry(i);
+                  return;
+              }
+          }
         }
 ```
 参考
