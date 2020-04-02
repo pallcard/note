@@ -13,10 +13,12 @@ ThreadLocal的作用是提供线程内的局部变量，就是在各线程内部
 
 
 
-## 概览
+## 源码
 
 ```
-
+public class ThreadLocal<T> {
+	static class ThreadLocalMap {}
+}
 
 ```
 
