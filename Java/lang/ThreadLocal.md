@@ -82,11 +82,11 @@ public class Thread implements Runnable {
                 return result;
             }
         }
-        return setInitialValue(); // 延迟初始发
+        return setInitialValue(); // 延迟初始化
     }
 
     private T setInitialValue() {
-        T value = initialValue();
+        T value = initialValue(); // 默认返回null
         Thread t = Thread.currentThread();
         // 通过当前Threadlocal获取entry
         ThreadLocalMap map = getMap(t);
@@ -94,7 +94,7 @@ public class Thread implements Runnable {
             map.set(this, value);
         else
             createMap(t, value);
-        return value;
+        return value; // new ThreadLocalMap并set第一个value
     }
 
 
