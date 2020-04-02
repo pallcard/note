@@ -7,6 +7,9 @@ ThreadLocal的作用是提供线程内的局部变量，就是在各线程内部
 2.set:设置当前线程ThreadLocal值
 3.remove：删除ThreadLocal绑定值
 
+![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/04/02/1585795156229-1585795156291.png)
+
+
 
 ```
 
