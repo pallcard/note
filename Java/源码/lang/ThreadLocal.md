@@ -202,7 +202,7 @@ public class Thread implements Runnable {
 
 ## 总结
 
-在线程里面放一个Map,key为
+在线程里面放一个Map,key为ThreadLocal，value为存储对象，Map定义在
 
 
 
