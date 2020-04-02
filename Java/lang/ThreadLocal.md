@@ -36,7 +36,7 @@ public class ThreadLocal<T> {
 	private Entry[] table;
 	private int size = 0;
 	private int threshold;
-
+	
 	...
 }
 
