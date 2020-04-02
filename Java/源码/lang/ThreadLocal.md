@@ -168,7 +168,7 @@ public class Thread implements Runnable {
             int sz = ++size;
             if (!cleanSomeSlots(i, sz) && sz >= threshold)
                 rehash();
-        }
+    }
 
     private void replaceStaleEntry(ThreadLocal<?> key, Object value,
                                        int staleSlot) {
@@ -181,7 +181,7 @@ public class Thread implements Runnable {
             // incremental rehashing due to garbage collector freeing
             // up refs in bunches (i.e., whenever the collector runs).
             int slotToExpunge = staleSlot;
-            for (int i = prevIndex(staleSlot, len);
+            for (int i = prevIndex(staleSlot, len); // 
                  (e = tab[i]) != null;
                  i = prevIndex(i, len))
                 if (e.get() == null)  // e.get() ==> 返回key
@@ -226,7 +226,7 @@ public class Thread implements Runnable {
             // If there are any other stale entries in run, expunge them
             if (slotToExpunge != staleSlot)
                 cleanSomeSlots(expungeStaleEntry(slotToExpunge), len);
-        }
+    }
 
 
 ```
