@@ -64,7 +64,7 @@ public class Thread implements Runnable {
 3. size记录实际个数
 4. threshold扩容阈值，初始 len*2/3
 5. nextIndex和prevIndex则是为了安全的移动索引
-6. key hash的实现是通过一个类变量AtomicInteger，
+6. key hash的实现是通过一个类变量AtomicInteger，每个key都在这个变量上增加一个值（cas）实现
 
 ### 重要方法
 
