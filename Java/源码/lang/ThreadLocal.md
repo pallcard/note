@@ -65,7 +65,7 @@ public class Thread implements Runnable {
 4. threshold扩容阈值，初始 len*2/3
 5. nextIndex和prevIndex则是为了安全的移动索引
 6. key hash的实现是通过一个类变量AtomicInteger，每个key都在这个变量上增加一个值（cas）实现
-7. Entry是继承了WeakReference实现的，当ThreadLocal Ref销毁时，指向堆中ThreadLocal实例的唯一一条强引用消失了，只有Entry有一条指向ThreadLocal实例的弱引用，假设你知道弱引用的特性，那么这里ThreadLocal实例是可以被GC掉的，这时Entry里的key为null了，
+7. Entry是继承了WeakReference实现的，当ThreadLocal Ref销毁时，指向堆中ThreadLocal实例的唯一一条强引用消失了，只有Entry有一条指向ThreadLocal实例的弱引用，假设你知道弱引用的特性，那么这里ThreadLocal实例是可以被GC掉的，这时Entry里的key为null了
 
 ### 重要方法
 
