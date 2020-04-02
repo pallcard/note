@@ -14,7 +14,7 @@ ThreadLocal的作用是提供线程内的局部变量，就是在各线程内部
 
 ## 源码
 
-### 数据定义
+### 定义
 
 ```java
 // ThreadLocal.java

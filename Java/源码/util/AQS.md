@@ -1,9 +1,9 @@
 # AQS
-
+AbstractQueuedSynchronizer（AQS）是同步器实现框架
 
 ## 源码
 
-### 数据定义
+### 定义
 ```
 public abstract class AbstractQueuedSynchronizer
     extends AbstractOwnableSynchronizer
