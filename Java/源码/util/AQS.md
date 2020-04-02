@@ -38,6 +38,37 @@ public abstract class AbstractQueuedSynchronizer
 
 #### 
 ```
+private Node addWaiter(Node mode) {
+        Node node = new Node(Thread.currentThread(), mode);
+        // Try the fast path of enq; backup to full enq on failure
+        Node pred = tail;
+        if (pred != null) {  // 尝试快速将该节点加入到队列的尾部
+            node.prev = pred;
+            if (compareAndSetTail(pred, node)) { // 当tail=pred时，更新tail为node
+                pred.next = node;
+                return node;
+            }
+        }
+        enq(node);
+        return node;
+    }
+
+    private Node enq(final Node node) {
+        for (;;) {   // 自旋直至成功
+            Node t = tail;
+            if (t == null) { // Must initialize   等待队列为空
+                if (compareAndSetHead(new Node()))
+                    tail = head;
+            } else {
+                node.prev = t;
+                if (compareAndSetTail(t, node)) {
+                    t.next = node;
+                    return t;
+                }
+            }
+        }
+    }
 ```
+
 
 ![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/04/02/1585838251595-1585838251650.png)
