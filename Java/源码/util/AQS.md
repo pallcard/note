@@ -80,4 +80,4 @@ private Node addWaiter(Node mode) {
 ![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/04/02/1585839043529-1585839043534.png)
 
 
-说明：初始CLH队列为空，当调用`addWaiter()`时，`pred=tail`此时为空，直接调用`enq(node)`,在enq方法中，`t=tail`此时为空，故通过cas设置head为new Node();设置成功令`tail=head`,否则自旋；此时`t=tail`不空，
+说明：初始CLH队列为空，当调用`addWaiter()`时，`pred=tail`此时为空，直接调用`enq(node)`,在enq方法中，`t=tail`此时为空，故通过cas设置head为new Node();设置成功令`tail=head`,否则自旋；此时`t=tail`不空，设置node的prev指针，cas设置tail，设置t的next指针；
