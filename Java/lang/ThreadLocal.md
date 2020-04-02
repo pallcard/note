@@ -12,10 +12,11 @@ ThreadLocal的作用是提供线程内的局部变量，就是在各线程内部
 说明：Thread 中有`ThreadLocal.ThreadLocalMap threadLocals = null;`,ThreadLocal中定义了静态内部类ThreadLocalMap，ThreadLocalMap中有一个hash表（table数组，使用开发地址法），其中每个值为Entry,Entry为kv的形式，K为一个ThreadLocal的虚引用(下一次GC回收)，
 
 
-
 ## 源码
 
-```
+### 数据定义
+
+```java
 // ThreadLocal.java
 public class ThreadLocal<T> {
 	static class ThreadLocalMap {
@@ -45,7 +46,7 @@ public class Thread implements Runnable {
 ...
 }
 ```
-
+### 
 
 
 参考
