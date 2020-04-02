@@ -79,4 +79,4 @@ private Node addWaiter(Node mode) {
 
 ![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/04/02/1585838251595-1585838251650.png)
 
-说明：在添加
+说明：初始CLH队列为空，当调用add
