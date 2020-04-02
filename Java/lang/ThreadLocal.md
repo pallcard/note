@@ -9,7 +9,7 @@ ThreadLocal的作用是提供线程内的局部变量，就是在各线程内部
 
 ![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/04/02/1585795156229-1585795156291.png)
 
-
+说明：Thread 中有`ThreadLocal.ThreadLocalMap threadLocals = null;`,Thread
 
 ```
 
