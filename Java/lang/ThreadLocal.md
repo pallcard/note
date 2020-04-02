@@ -19,7 +19,7 @@ ThreadLocal的作用是提供线程内的局部变量，就是在各线程内部
 ```java
 // ThreadLocal.java
 public class ThreadLocal<T> {
-    private final int threadLocalHashCode = nextHashCode();
+    private final int threadLocalHashCode = nextHashCode(); // key的hashcode,通过AtomicInteger实现，每次给通过给nextHashCode增加一个固定值
     private static AtomicInteger nextHashCode =
         new AtomicInteger();
     static class ThreadLocalMap {
