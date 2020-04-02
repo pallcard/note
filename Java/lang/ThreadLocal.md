@@ -82,7 +82,7 @@ public class Thread implements Runnable {
                 return result;
             }
         }
-        return setInitialValue();
+        return setInitialValue(); // 延迟初始发
     }
 
     private T setInitialValue() {
