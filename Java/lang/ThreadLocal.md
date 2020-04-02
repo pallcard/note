@@ -116,7 +116,7 @@ public class Thread implements Runnable {
                 if (k == key)
                     return e;
                 if (k == null)
-                    expungeStaleEntry(i); // 证明这个Entry中key已经为null,那么这个Entry就是一个过期对象，这里调用expungeStaleEntry清理该Entry
+                    expungeStaleEntry(i); // 证明这个Entry中key已经为null,那么这个Entry就是一个过期对象，这里调用expungeStaleEntry清理该Entry，详见remove
                 else
                     i = nextIndex(i, len); // ThreadLocal采用的是开放地址法，即有冲突后，把要插入的元素放在要插入的位置后面为null的地方，
                 e = tab[i];
