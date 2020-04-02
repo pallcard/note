@@ -20,15 +20,21 @@ public class ThreadLocal<T> {
 	static class ThreadLocalMap {
 		// 下一次GC回收
 		static class Entry extends WeakReference<ThreadLocal<?>> { 
-            	/** The value associated with this ThreadLocal. */
-            	Object value;
+            		/** The value associated with this ThreadLocal. */
+            		Object value;
 
             		Entry(ThreadLocal<?> k, Object v) {
                 		super(k);
                 		value = v;
             		}
         	}
+
 	}
+
+	private Entry[] table;
+	private int size = 0;
+	private int threshold;
+	...
 }
 
 ```
