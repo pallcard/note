@@ -199,5 +199,12 @@ public class Thread implements Runnable {
 
 
 ```
+
+## 总结
+
+在线程里面放一个Map,key为
+
+
+
 ## 参考
 https://juejin.im/post/5a5efb1b518825732b19dca4
