@@ -232,6 +232,12 @@ public class Thread implements Runnable {
 
 ```
 
+#### rehash
+```
+
+
+```
+
 #### remove
 ```java
      public void remove() {
