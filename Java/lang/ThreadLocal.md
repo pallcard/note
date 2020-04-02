@@ -19,6 +19,7 @@ ThreadLocal的作用是提供线程内的局部变量，就是在各线程内部
 ```java
 // ThreadLocal.java
 public class ThreadLocal<T> {
+
     static class ThreadLocalMap {
         // WeakReference下一次GC回收
 	static class Entry extends WeakReference<ThreadLocal<?>> { 
