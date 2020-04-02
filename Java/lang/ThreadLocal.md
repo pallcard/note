@@ -47,7 +47,8 @@ public class Thread implements Runnable {
 }
 ```
 说明：
-
+1. 初始容量 16
+2. 
 
 ### 重要方法
 
