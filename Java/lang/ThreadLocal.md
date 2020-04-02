@@ -48,7 +48,8 @@ public class Thread implements Runnable {
 ```
 说明：
 1. 初始容量 16
-2. 
+2. 主要数据结构是Entry数组
+3. size
 
 ### 重要方法
 
