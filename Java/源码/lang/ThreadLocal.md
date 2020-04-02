@@ -233,15 +233,42 @@ public class Thread implements Runnable {
 ```
 
 #### rehash
-```
+```java
         private void rehash() {
             expungeStaleEntries();
 
             // Use lower threshold for doubling to avoid hysteresis
-            if (size >= threshold - threshold / 4)
+            if (size >= threshold - threshold / 4) // size大于3/4的threshold，则调用resize函数
                 resize();
         }
 
+        private void resize() {
+            Entry[] oldTab = table;
+            int oldLen = oldTab.length;
+            int newLen = oldLen * 2; // 扩容为两倍
+            Entry[] newTab = new Entry[newLen];
+            int count = 0;
+
+            for (int j = 0; j < oldLen; ++j) {
+                Entry e = oldTab[j];
+                if (e != null) {
+                    ThreadLocal<?> k = e.get();
+                    if (k == null) {
+                        e.value = null; // Help the GC
+                    } else {
+                        int h = k.threadLocalHashCode & (newLen - 1); // 从新放置
+                        while (newTab[h] != null) // 冲突，开地址法
+                            h = nextIndex(h, newLen);
+                        newTab[h] = e;
+                        count++;
+                    }
+                }
+            }
+
+            setThreshold(newLen);
+            size = count;
+            table = newTab;
+        }
 ```
 
 #### remove
