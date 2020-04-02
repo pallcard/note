@@ -30,6 +30,10 @@ public class ThreadLocal<T> {
                  value = v;
             }
         }
+        private static int nextIndex(int i, int len) {
+            return ((i + 1 < len) ? i + 1 : 0);
+        }
+        
 
     }
 
@@ -38,6 +42,7 @@ public class ThreadLocal<T> {
 	private int threshold;
 	private static final int INITIAL_CAPACITY = 16;
 	...
+
 }
 
 // Thread.java
