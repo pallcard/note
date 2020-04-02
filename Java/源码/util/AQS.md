@@ -10,6 +10,12 @@ AQS的主要使用方式是继承，子类通过继承同步器并实现它的�
 public abstract class AbstractQueuedSynchronizer
     extends AbstractOwnableSynchronizer
     implements java.io.Serializable {
+
+    private transient volatile Node head;  // 头结点
+    private transient volatile Node tail;  // 尾结点
+    private volatile int state; //state 字段为同步状态，其中 state > 0 为有锁状态，每次加锁就在原有 state 基础上加 1，即代表当前持有锁的线程加了 state 次锁，反之解锁时每次减一，当 statte = 0 为无锁状态；
+
+
 }
 ```
 
