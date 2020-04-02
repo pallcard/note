@@ -126,6 +126,11 @@ public class Thread implements Runnable {
 
 ```
 
+#### set
+```java
+
+```
+
 #### remove
 ```java
      public void remove() {
