@@ -21,7 +21,7 @@ ThreadLocal的作用是提供线程内的局部变量，就是在各线程内部
 public class ThreadLocal<T> {
     private final int threadLocalHashCode = nextHashCode(); // key的hashcode,通过AtomicInteger实现，每次给通过给nextHashCode增加一个固定值
     private static AtomicInteger nextHashCode =
-        new AtomicInteger();
+        new AtomicInteger(); // 此值为static变量，类共享，保证所有实例共享
     static class ThreadLocalMap {
         // WeakReference下一次GC回收
 	static class Entry extends WeakReference<ThreadLocal<?>> { 
@@ -64,6 +64,7 @@ public class Thread implements Runnable {
 3. size记录实际个数
 4. threshold扩容阈值，初始 len*2/3
 5. nextIndex和prevIndex则是为了安全的移动索引
+6. key hash的实现是通过一个类变量AtomicInteger，
 
 ### 重要方法
 
