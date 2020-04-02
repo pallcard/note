@@ -94,7 +94,14 @@ public class Thread implements Runnable {
     }
 
 
-
+        private Entry getEntry(ThreadLocal<?> key) {
+            int i = key.threadLocalHashCode & (table.length - 1); // 通过hash值找到下标
+            Entry e = table[i];
+            if (e != null && e.get() == key)
+                return e;
+            else
+                return getEntryAfterMiss(key, i, e); //开地址法查找
+        }
 
 ```
 
