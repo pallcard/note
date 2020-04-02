@@ -46,7 +46,26 @@ public class Thread implements Runnable {
 ...
 }
 ```
-### 
+
+### 重要方法
+
+#### get
+
+```java
+    public T get() {
+        Thread t = Thread.currentThread();
+        ThreadLocalMap map = getMap(t);  //通过getMap获取Thread内的ThreadLocalMap
+        if (map != null) {
+            ThreadLocalMap.Entry e = map.getEntry(this);
+            if (e != null) {
+                @SuppressWarnings("unchecked")
+                T result = (T)e.value;
+                return result;
+            }
+        }
+        return setInitialValue();
+    }
+```
 
 
 参考
