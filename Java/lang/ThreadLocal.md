@@ -69,6 +69,7 @@ public class Thread implements Runnable {
     private T setInitialValue() {
         T value = initialValue();
         Thread t = Thread.currentThread();
+        // 通过当前Threadlocal获取entry
         ThreadLocalMap map = getMap(t);
         if (map != null)
             map.set(this, value);
