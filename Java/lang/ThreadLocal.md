@@ -149,9 +149,43 @@ public class Thread implements Runnable {
           }
      }
 
+private int expungeStaleEntry(int staleSlot) {
+            Entry[] tab = table;
+            int len = tab.length;
 
+            // expunge entry at staleSlot 置null
+            tab[staleSlot].value = null;
+            tab[staleSlot] = null;
+            size--;
+
+            // Rehash until we encounter null 由于使用开放地址法，故i值之后的元素可以和之前元素的hash值相同，这些元素需要清理
+            Entry e;
+            int i;
+            for (i = nextIndex(staleSlot, len);
+                 (e = tab[i]) != null;  // 需要处理 staleSlot -> 下一个tab值不为null的元素
+                 i = nextIndex(i, len)) {
+                ThreadLocal<?> k = e.get();
+                if (k == null) { // 清理一下value、entry值
+                    e.value = null;
+                    tab[i] = null;
+                    size--;
+                } else {
+                    int h = k.threadLocalHashCode & (len - 1);
+                    if (h != i) {   // rehash 将i放置到正确的位置（h）
+                        tab[i] = null;
+
+                        // Unlike Knuth 6.4 Algorithm R, we must scan until
+                        // null because multiple entries could have been stale.
+                        while (tab[h] != null)  // h位置已占用，往后找
+                            h = nextIndex(h, len);
+                        tab[h] = e;
+                    }
+                }
+            }
+            return i;
+        }
 
 
 ```
-参考
+## 参考
 https://juejin.im/post/5a5efb1b518825732b19dca4
