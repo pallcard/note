@@ -49,8 +49,9 @@ public class Thread implements Runnable {
 说明：
 1. 初始容量 16
 2. 主要数据结构是Entry数组
-3. size
-
+3. size记录实际个数
+4. threshold扩容阈值，初始 len*2/3
+5. 
 ### 重要方法
 
 #### get
