@@ -16,6 +16,7 @@ ThreadLocal的作用是提供线程内的局部变量，就是在各线程内部
 ## 源码
 
 ```
+// ThreadLocal
 public class ThreadLocal<T> {
 	static class ThreadLocalMap {
 		// 下一次GC回收
@@ -34,8 +35,12 @@ public class ThreadLocal<T> {
 	private Entry[] table;
 	private int size = 0;
 	private int threshold;
+
 	...
 }
+
+// ThreadLocal
+
 
 ```
 
