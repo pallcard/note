@@ -126,7 +126,7 @@ public class Thread implements Runnable {
 
 ```
 
-#### get
+#### remove
 ```java
      public void remove() {
          ThreadLocalMap m = getMap(Thread.currentThread());
@@ -149,7 +149,7 @@ public class Thread implements Runnable {
           }
      }
 
-private int expungeStaleEntry(int staleSlot) {
+    private int expungeStaleEntry(int staleSlot) {
             Entry[] tab = table;
             int len = tab.length;
 
