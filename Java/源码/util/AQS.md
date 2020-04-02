@@ -18,23 +18,22 @@ public abstract class AbstractQueuedSynchronizer
  static final class Node {
         // 共享模式，表示线程要获取的是共享锁，即一个锁可以被不同的线程拥有
         static final Node SHARED = new Node();  
-        /** Marker to indicate a node is waiting in exclusive mode */
-        static final Node EXCLUSIVE = null;  // 独占模式，表示线程要获取的独占锁，即一个锁只能被一个线程拥有
+        // 独占模式，表示线程要获取的独占锁，即一个锁只能被一个线程拥有
+        static final Node EXCLUSIVE = null;  
 
-        /** waitStatus value to indicate thread has cancelled */
-        static final int CANCELLED =  1;  //表示当前节点的线程因为超时或中断被取消了
-        /** waitStatus value to indicate successor's thread needs unparking */
-        static final int SIGNAL    = -1;  // 表示当前节点的后续节点中的线程通过 park 被阻塞了，需要通过unpark解除它的阻塞
-        /** waitStatus value to indicate thread is waiting on condition */
-        static final int CONDITION = -2;  // 表示当前节点在 condition 队列中
-        /**
-         * waitStatus value to indicate the next acquireShared should
-         * unconditionally propagate
-         */
-        static final int PROPAGATE = -3; // 共享模式的头结点可能处于此状态，表示无条件往下传播,引入此状态是为了优化锁竞争，使队列中线程有序地一个一个唤醒
+        //表示当前节点的线程因为超时或中断被取消了
+        static final int CANCELLED =  1;  
+        // 表示当前节点的后续节点中的线程通过 park 被阻塞了，需要通过unpark解除它的阻塞
+        static final int SIGNAL    = -1; 
+        // 表示当前节点在 condition 队列中
+        static final int CONDITION = -2;  
+        // 共享模式的头结点可能处于此状态，表示无条件往下传播,引入此状态是为了优化锁竞争，使队列中线程有序地一个一个唤醒
+        static final int PROPAGATE = -3; 
 
-
+}
 ```
 
+
+### 
 
 ![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/04/02/1585838251595-1585838251650.png)
