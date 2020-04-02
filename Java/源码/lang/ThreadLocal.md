@@ -234,7 +234,13 @@ public class Thread implements Runnable {
 
 #### rehash
 ```
+        private void rehash() {
+            expungeStaleEntries();
 
+            // Use lower threshold for doubling to avoid hysteresis
+            if (size >= threshold - threshold / 4)
+                resize();
+        }
 
 ```
 
