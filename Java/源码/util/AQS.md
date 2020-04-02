@@ -28,7 +28,13 @@ public abstract class AbstractQueuedSynchronizer
         // 表示当前节点在 condition 队列中
         static final int CONDITION = -2;  
         // 共享模式的头结点可能处于此状态，表示无条件往下传播,引入此状态是为了优化锁竞争，使队列中线程有序地一个一个唤醒
-        static final int PROPAGATE = -3; 
+        static final int PROPAGATE = -3;
+
+        volatile int waitStatus;
+        volatile Node prev;
+        volatile Node next;
+        volatile Thread thread;
+        Node nextWaiter;
 
 }
 ```
