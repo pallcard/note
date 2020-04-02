@@ -81,4 +81,4 @@ private Node addWaiter(Node mode) {
 
 
 说明：初始CLH队列为空，当调用`addWaiter()`时，`pred=tail`此时为空，直接调用`enq(node)`,在enq方法中，`t=tail`此时为空，故通过cas设置head为new Node();设置成功令`tail=head`,否则自旋；此时`t=tail`不空，设置node的prev指针，cas设置tail，设置t的next指针，然后返回t，addWaiter返回node。
-当
+当再次调用`addWaiter()`时，`pred=tail`此时不为空，将node加入尾部，
