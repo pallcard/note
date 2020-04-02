@@ -254,7 +254,7 @@ public class Thread implements Runnable {
           }
      }
 
-    private int expungeStaleEntry(int staleSlot) {
+    private int expungeStaleEntry(int staleSlot) { // expunge:删除   stale：过期的, 从staleSlot开始，处理到不空位置
             Entry[] tab = table;
             int len = tab.length;
 
