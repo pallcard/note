@@ -39,13 +39,13 @@ public class ThreadLocal<T> {
             return ((i - 1 >= 0) ? i - 1 : len - 1);
         }
 
-    }
-
 	private Entry[] table;
 	private int size = 0;
 	private int threshold;
 	private static final int INITIAL_CAPACITY = 16;
 	...
+
+    }
 
 }
 
@@ -60,7 +60,8 @@ public class Thread implements Runnable {
 2. 主要数据结构是Entry数组
 3. size记录实际个数
 4. threshold扩容阈值，初始 len*2/3
-5. 
+5. nextIndex和prevIndex则是为了安全的移动索引
+
 ### 重要方法
 
 #### get
