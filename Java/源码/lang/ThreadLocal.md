@@ -204,7 +204,9 @@ public class Thread implements Runnable {
 
 1. 在线程里面放一个Map表, Map定义在ThreadLocal中，Map表中每个元素是Entry，key为ThreadLocal，value为存储对象。
 
-2. 采用延迟初始化，当get/set时，会创建map对象，
+2. 采用延迟初始化，当get/set时，会为当前线程创建map对象并赋值。
+
+3. hash表采用的开放地址法，
 
 
 ## 参考
