@@ -1,9 +1,9 @@
-## 引言
+# JDK并发包
 
 JDK并发包中提供了CountDownLatch、CyclicBarrier、Semaphore工具类来实现并发流程的控制。
 Exchanger提供了线程间交换数据的方法。
 
-### join()方法
+## join()方法
 
 需求：实现主程序要等待其他线程完成后，在继续执行。很容易想到使用join()方法来实现。
 
@@ -36,7 +36,7 @@ public class JoinCountDownLatchTest {
 join()原理是不停的检查join线程是否存活，直到join线程都中止，线程才会this.notifyAll()。
 
 
-### CountDownLatch类
+## CountDownLatch类
 ```java
 public class CountDownLatchTest {
 
@@ -96,7 +96,7 @@ CountDownLatch类的构造函数需要传入数字N，表示你想等待N个点�
     }
 ```
 
-### CyclicBarrier类
+## CyclicBarrier类
 
 ```java
 public class CyclicBarrierTest {
@@ -156,7 +156,7 @@ CyclicBarrier让一组线程到达一个屏障时被阻塞，例如，上述代�
 然后就会3个线程都会被阻塞。在CyclicBarrier的构造函数中也可以添加一个任务，到线程数达到屏障要求时，线程
 继续执行，并且构造函数中的会优先执行。
 
-#### 实例
+#### 三级标题# 实例
 
 计算银行的账单流水，使用多个线程进行计算，然后进行汇总。
 
