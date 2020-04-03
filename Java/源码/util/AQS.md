@@ -107,3 +107,5 @@ https://juejin.im/entry/5ae02a7c6fb9a07ac76e7b70
 https://www.jianshu.com/p/c806dd7f60bc
 
 http://objcoding.com/2019/05/05/aqs-exclusive-lock/#aqs-%E7%BB%93%E6%9E%84%E5%89%96%E6%9E%90
+
+https://tech.meituan.com/2019/12/05/aqs-theory-and-apply.html
