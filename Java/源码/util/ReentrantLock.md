@@ -43,7 +43,7 @@ public class ReentrantLockTest {
 ![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/04/04/1585987486634-1585987486636.png)
 
 说明：ReentrantLock 调用lock时，若为非公平锁先直接通过cas设置state的状态，若设置失败，在调用acquire，acquire会先调用tryAcquire(AQS子类实现)，线程会尝试通过cas设置状态，若失败，将thread封装成Node加入到队列（CLH队列）中，然后调用acquireQueued，
-acquireQueued中会自旋，判断前一个结点是否为
+acquireQueued中会自旋，判断前一个结点是否为head，
 
 
 ![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/04/04/1585988196704-1585988196707.png)
