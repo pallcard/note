@@ -24,7 +24,7 @@ public class ReentrantLockTest {
         rlock.lock();
         System.out.println(Thread.currentThread().getName()+ " start");
         for (int j = 0; j < 10; j++) {
-          count++;
+          System.out.println(Thread.currentThread().getName()+ " " +count++);
         }
         System.out.println(Thread.currentThread().getName()+ " end");
         rlock.unlock();
