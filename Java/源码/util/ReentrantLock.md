@@ -193,11 +193,11 @@ public class ReentrantLockTest {
 
 #### 关于FairSync和NonfairSync中tryAcquire
 ```
-// FairSync
+        // FairSync
         protected final boolean tryAcquire(int acquires) {
             return nonfairTryAcquire(acquires);
         }
-	// 
+	// Sync
         final boolean nonfairTryAcquire(int acquires) {
             final Thread current = Thread.currentThread();
             int c = getState();
@@ -238,7 +238,7 @@ public class ReentrantLockTest {
             return false;
         }
 ```
-
+看以上代码可以发现FairSync和NonfairSync中tryAcquire实际上只有
 
 
 ### 例子说明
