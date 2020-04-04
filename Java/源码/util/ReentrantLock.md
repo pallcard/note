@@ -41,6 +41,17 @@ public class ReentrantLockTest {
 ### 非公平锁上锁流程
 
 在通过`new ReentrantLock();`进行上锁时，构造器会经sync赋值为NonfairSync，在调用`rlock.lock`时,
+```
+new ReentrantLock()     =>  sync->NonfairSync
+rlock.
+
+
+````
+
+
+
+
+
 
 
 
