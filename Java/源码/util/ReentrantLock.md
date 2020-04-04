@@ -193,7 +193,28 @@ public class ReentrantLockTest {
 
 #### 关于FairSync和NonfairSync中tryAcquire
 ```
+// FairSync
 
+// FairSync
+protected final boolean tryAcquire(int acquires) {
+            final Thread current = Thread.currentThread();
+            int c = getState();
+            if (c == 0) {
+                if (!hasQueuedPredecessors() && // 若队列中无有效结点才进行cas操作拿锁
+                    compareAndSetState(0, acquires)) {
+                    setExclusiveOwnerThread(current);
+                    return true;
+                }
+            }
+            else if (current == getExclusiveOwnerThread()) {  // 可重入锁
+                int nextc = c + acquires;
+                if (nextc < 0)
+                    throw new Error("Maximum lock count exceeded");
+                setState(nextc);
+                return true;
+            }
+            return false;
+        }
 ```
 
 
