@@ -157,6 +157,7 @@ public class ReentrantLockTest {
             setState(c);
             return free;
         }
+
     private void unparkSuccessor(Node node) {
         /*
          * If status is negative (i.e., possibly needing signal) try
