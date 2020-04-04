@@ -38,7 +38,7 @@ public class ReentrantLockTest {
 }
 ```
 
-### 非公平锁上锁流程
+### 上锁流程
 
 ![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/04/04/1585987008257-1585987008285.png)
 
