@@ -5,6 +5,6 @@
 ![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/04/04/1585974509118-1585974509197.png)
 【如何发现】：单步调试发现
 
-【如何修复】：***
+【如何修复】：判断时不能直接减然后强转
 
 【总结】：***
