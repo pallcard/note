@@ -53,7 +53,19 @@ public class ReentrantLockTest {
 
 ### 代码说明
 
+```java
+// ReentrantLock#NonfairSync
+        final void lock() {
+            if (compareAndSetState(0, 1))//若通过CAS设置变量State（同步状态）成功，也就是获取锁成功，则将当前线程设置为独占线程
+                setExclusiveOwnerThread(Thread.currentThread());
+            else
+                acquire(1);// 存在某种排队等候机制，线程继续等待，仍然保留获取锁的可能，获取锁流程仍在继续
+        }
 
+
+
+
+```
 
 
 
