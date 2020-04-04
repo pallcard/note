@@ -70,7 +70,7 @@ public class ReentrantLockTest {
 
     // AbstractQueuedSynchronizer
     public final void acquire(int arg) {
-        //去尝试获取锁，获取成功则设置锁状态并返回true，否则返回false。
+        //去尝试获取锁，获取成功则设置锁状态并返回true，否则返回false。tryAcquire尝试获取锁，子类实现
         if (!tryAcquire(arg) && 
             //如果tryAcquire返回FALSE（获取同步状态失败），则调用该方法将当前线程加入到CLH同步队列尾部。
             acquireQueued(addWaiter(Node.EXCLUSIVE), arg)) 
