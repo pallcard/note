@@ -238,7 +238,7 @@ public class ReentrantLockTest {
             return false;
         }
 ```
-看以上代码可以发现FairSync和NonfairSync中tryAcquire实际上只有
+看以上代码可以发现FairSync和NonfairSync中tryAcquire实际上只有一行代码是不同的，公平锁多了一个判断队列中是否存在
 
 
 ### 例子说明
