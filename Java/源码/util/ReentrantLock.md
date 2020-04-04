@@ -42,6 +42,9 @@ public class ReentrantLockTest {
 
 ![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/04/04/1585987486634-1585987486636.png)
 
+说明：ReentrantLock 
+
+
 ![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/04/04/1585988196704-1585988196707.png)
 
 
