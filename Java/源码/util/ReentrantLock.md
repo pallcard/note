@@ -245,8 +245,8 @@ protected final boolean tryAcquire(int acquires) {
             final Thread current = Thread.currentThread();
             int c = getState();
             if (c == 0) {
-                
-                if ((this instanceof FairSync && !hasQueuedPredecessors()) && // 若队列中无有效结点才进行cas操作拿锁
+                // 若队列中无有效结点才进行cas操作拿锁
+                if ((this instanceof FairSync && !hasQueuedPredecessors()) && 
                     compareAndSetState(0, acquires)) {
                     setExclusiveOwnerThread(current);
                     return true;
