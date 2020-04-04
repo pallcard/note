@@ -119,7 +119,7 @@ public class ReentrantLockTest {
 
 ### 例子说明
 
-开头例子启动了5个线程(t1,...t5)，启动后他们会去争抢锁，假设t1最先lock，他通过cas操作拿到了锁，然后t2-t5在取lock时，
+开头例子启动了5个线程(t1,...t5)，启动后他们会去争抢锁，假设t1最先lock，他通过cas操作拿到了锁，然后t2-t5在取lock时会失败，然后调用acquire，会
 
 
 
