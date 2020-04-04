@@ -245,8 +245,8 @@ public class ReentrantLockTest {
             final Thread current = Thread.currentThread();
             int c = getState();
             if (c == 0) {
-		!hasQueuedPredecessors() && // 若队列中无有效结点才进行cas操作拿锁
-                if (compareAndSetState(0, acquires)) {
+                if (!hasQueuedPredecessors() && // 若队列中无有效结点才进行cas操作拿锁
+                    compareAndSetState(0, acquires)) {
                     setExclusiveOwnerThread(current);
                     return true;
                 }
@@ -260,6 +260,9 @@ public class ReentrantLockTest {
             }
             return false;
         }
+
+	// Sync
+
 ```
 
 
