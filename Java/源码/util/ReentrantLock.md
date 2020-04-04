@@ -246,7 +246,7 @@ protected final boolean tryAcquire(int acquires) {
             int c = getState();
             if (c == 0) {
                 // 若队列中无有效结点才进行cas操作拿锁
-                if ((this instanceof FairSync && !hasQueuedPredecessors()) && 
+                if (!(this instanceof FairSync && !hasQueuedPredecessors()) && 
                     compareAndSetState(0, acquires)) {
                     setExclusiveOwnerThread(current);
                     return true;
