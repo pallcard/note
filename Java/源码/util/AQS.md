@@ -110,15 +110,20 @@ private Node addWaiter(Node mode) {
         try {
             //中断标志
             boolean interrupted = false; 
-
-            for (;;) {  // 自旋
-                final Node p = node.predecessor();  // 获取当前节点的 pred 节点
-                if (p == head && tryAcquire(arg)) { //当前线程的前驱节点是头结点，且同步状态成功，head 节点代表当前持有锁的线程，那么如果当前节点的 pred 节点是 head 节点，说明当前节点在真实数据队列的首部，就尝试获取锁（头结点是虚节点）
-                    setHead(node); // 获取锁成功，头指针移动到当前node
+            // 自旋
+            for (;;) { 
+		// 获取当前节点的 pred 节点
+                final Node p = node.predecessor();  
+ 		//当前线程的前驱节点是头结点，且同步状态成功，head 节点代表当前持有锁的线程，那么如果当前节点的 pred 节点是 head 节点，说明当前节点在真实数据队列的首部，就尝试获取锁（头结点是虚节点）
+                if (p == head && tryAcquire(arg)) {
+		    // 获取锁成功，头指针移动到当前node
+                    setHead(node); 
                     p.next = null; // help GC
                     failed = false;
-                    return interrupted; // 不需要挂起，返回 false
-                } // 说明p为头节点且当前没有获取到锁（可能是非公平锁被抢占了）或者是p不为头结点，这个时候就要判断当前node是否要被阻塞（被阻塞条件：前驱节点的waitStatus为-1），防止无限循环浪费资源。具体两个方法下面细细分析
+		    // 不需要挂起，返回 false
+                    return interrupted; 
+                } 
+// 说明p为头节点且当前没有获取到锁（可能是非公平锁被抢占了）或者是p不为头结点，这个时候就要判断当前node是否要被阻塞（被阻塞条件：前驱节点的waitStatus为-1），防止无限循环浪费资源。具体两个方法下面细细分析
                 if (shouldParkAfterFailedAcquire(p, node) &&  // 获取锁失败，则进入挂起逻辑
                     parkAndCheckInterrupt()) //挂起当前线程，阻塞调用栈，返回当前线程的中断状态。
                     interrupted = true;
