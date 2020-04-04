@@ -191,7 +191,10 @@ public class ReentrantLockTest {
     }
 ```
 
-#### 关于
+#### 关于FairSync和NonfairSync中tryAcquire
+```
+
+```
 
 
 
