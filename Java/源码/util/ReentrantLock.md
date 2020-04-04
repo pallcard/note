@@ -4,7 +4,7 @@
 
 ### ReentrantLockTest
 
-main方法中通过`new ReentrantLock();`创建了一个可重入锁，然后通过线程池创建了5个线程，
+main方法中通过`new ReentrantLock();`创建了一个可重入锁，然后通过线程池创建了5个线程，在各个线程中通过rlock.lock进行加锁，然后
 
 ```
 import java.util.concurrent.ExecutorService;
@@ -16,18 +16,18 @@ public class ReentrantLockTest {
   public static volatile int count = 0;
 
   public static void main(String[] args) throws InterruptedException {
-    // ReentrantLock lock = new ReentrantLock(true);
-    ReentrantLock lock = new ReentrantLock();
+    // ReentrantLock rlock = new ReentrantLock(true);
+    ReentrantLock rlock = new ReentrantLock();
     ExecutorService executorService = Executors.newFixedThreadPool(5);
     for (int i = 0; i < 5; i++) {
       executorService.execute(()->{
-        lock.lock();
+        rlock.lock();
         System.out.println(Thread.currentThread().getName()+ " start");
         for (int j = 0; j < 10; j++) {
           count++;
         }
         System.out.println(Thread.currentThread().getName()+ " end");
-        lock.unlock();
+        rlock.unlock();
       });
     }
 
