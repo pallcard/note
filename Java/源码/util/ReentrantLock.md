@@ -144,7 +144,19 @@ public class ReentrantLockTest {
         return false;
     }
 
-
+    // ReentrantLock#Sync
+    protected final boolean tryRelease(int releases) {
+            int c = getState() - releases;
+            if (Thread.currentThread() != getExclusiveOwnerThread())
+                throw new IllegalMonitorStateException();
+            boolean free = false;
+            if (c == 0) {
+                free = true;
+                setExclusiveOwnerThread(null);
+            }
+            setState(c);
+            return free;
+        }
 
 ```
 
