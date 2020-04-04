@@ -164,7 +164,8 @@ public class ReentrantLockTest {
          * fails or if status is changed by waiting thread.
          */
         int ws = node.waitStatus;
-        if (ws < 0) // // 将头节点的状态设置为0, 尝试清除头节点的状态，改为初始状态
+        // 将头节点的状态设置为0, 尝试清除头节点的状态，改为初始状态
+        if (ws < 0)
             compareAndSetWaitStatus(node, ws, 0);
 
         /*
@@ -173,7 +174,9 @@ public class ReentrantLockTest {
          * traverse backwards from tail to find the actual
          * non-cancelled successor.
          */
-        Node s = node.next; // 后继节点
+        // 后继节点
+        Node s = node.next; 
+        // 如果后继节点为null，或者已经被取消了
         if (s == null || s.waitStatus > 0) {
             s = null;
             // for循环从队列尾部一直往前找可以唤醒的节点
