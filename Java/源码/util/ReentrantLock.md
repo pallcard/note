@@ -4,7 +4,7 @@
 
 ### ReentrantLockTest
 
-main方法中通过`new ReentrantLock();`创建了一个可重入锁，然后通过线程池创建了5个线程，在各个线程中通过rlock.lock进行加锁，然后
+main方法中通过`new ReentrantLock();`创建了一个可重入锁，然后通过线程池创建了5个线程，在各个线程中通过rlock.lock()进行加锁，然后执行逻辑，最后通过rlock.unlock()进行解锁。
 
 ```
 import java.util.concurrent.ExecutorService;
