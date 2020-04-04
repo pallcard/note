@@ -68,11 +68,14 @@ public class ReentrantLockTest {
         }
 
 
-// AbstractQueuedSynchronizer
+    // AbstractQueuedSynchronizer
     public final void acquire(int arg) {
-        if (!tryAcquire(arg) && //去尝试获取锁，获取成功则设置锁状态并返回true，否则返回false。
-            acquireQueued(addWaiter(Node.EXCLUSIVE), arg)) //如果tryAcquire返回FALSE（获取同步状态失败），则调用该方法将当前线程加入到CLH同步队列尾部。
-            selfInterrupt(); //acquireQueued：当前线程会根据公平性原则来进行阻塞等待（自旋）,直到获取锁为止；并且返回当前线程在等待过程中有没有中断过。
+        //去尝试获取锁，获取成功则设置锁状态并返回true，否则返回false。
+        if (!tryAcquire(arg) && 
+            //如果tryAcquire返回FALSE（获取同步状态失败），则调用该方法将当前线程加入到CLH同步队列尾部。
+            acquireQueued(addWaiter(Node.EXCLUSIVE), arg)) 
+            //acquireQueued：当前线程会根据公平性原则来进行阻塞等待（自旋）,直到获取锁为止；并且返回当前线程在等待过程中有没有中断过。
+            selfInterrupt(); 
     }
 ```
 
