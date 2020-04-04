@@ -2,7 +2,9 @@
 
 ## ReentrantLock流程
 
-* 1. 测试代码如下
+### ReentrantLockTest
+
+ma
 
 ```
 import java.util.concurrent.ExecutorService;
@@ -14,7 +16,8 @@ public class ReentrantLockTest {
   public static volatile int count = 0;
 
   public static void main(String[] args) throws InterruptedException {
-    ReentrantLock lock = new ReentrantLock(true);
+    // ReentrantLock lock = new ReentrantLock(true);
+    ReentrantLock lock = new ReentrantLock();
     ExecutorService executorService = Executors.newFixedThreadPool(5);
     for (int i = 0; i < 5; i++) {
       executorService.execute(()->{
