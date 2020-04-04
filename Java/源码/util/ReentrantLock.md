@@ -117,7 +117,9 @@ public class ReentrantLockTest {
 ```
 
 
-### 
+### 例子说明
+
+开头例子启动了5个线程，
 
 
 
