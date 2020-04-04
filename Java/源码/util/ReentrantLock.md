@@ -62,7 +62,10 @@ public class ReentrantLockTest {
                 acquire(1);// 存在某种排队等候机制，线程继续等待，仍然保留获取锁的可能，获取锁流程仍在继续
         }
 
-
+// ReentrantLock#FairSync
+        final void lock() {
+            acquire(1);
+        }
 
 
 ```
