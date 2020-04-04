@@ -123,7 +123,7 @@ public class ReentrantLockTest {
 
 ![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/04/04/1585997115494-1585997115496.png)
 
-![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/04/04/1585997093170-1585997093174.png)
+![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/04/04/1585997180105-1585997180109.png)
 
 ![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/04/04/1585997141559-1585997141562.png)
 
