@@ -50,7 +50,8 @@ public abstract class AbstractQueuedSynchronizer
 
 #### acquire
 ```
-public final void acquire(int arg) {
+    public final void acquire(int arg) {
+	//去尝试获取锁，获取成功则设置锁状态并返回true，否则返回false。
         if (!tryAcquire(arg) &&
             acquireQueued(addWaiter(Node.EXCLUSIVE), arg))
             selfInterrupt();
@@ -101,6 +102,7 @@ private Node addWaiter(Node mode) {
 当再次调用`addWaiter()`时，`pred=tail`此时不为空，将node加入尾部，若失败，则使用`enq(node)`添加。
 
 
+#### acquireQueued
 
 
 ## 参考
