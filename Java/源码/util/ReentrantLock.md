@@ -40,15 +40,9 @@ public class ReentrantLockTest {
 
 ### 上锁流程
 
-![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/04/04/1585987008257-1585987008285.png)
+![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/04/04/1585987486634-1585987486636.png)
 
-在通过`new ReentrantLock();`进行上锁时，构造器会经sync赋值为NonfairSync，在调用`rlock.lock`时,
-```
-ReentrantLock rlock = new ReentrantLock()     =>  sync->NonfairSync
-rlock.lock()                                  =>  sync.lock
-
-
-````
+z
 
 
 
