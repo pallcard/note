@@ -241,12 +241,12 @@ public class ReentrantLockTest {
 看以上代码可以发现FairSync和NonfairSync中tryAcquire实际上只有一行代码是不同的，公平锁多了一个队列中是否存在有效结点的判断`!hasQueuedPredecessors()`，可以考虑到模板方法把可变的这一行提出来。
 ```
     // Sync
-protected final boolean tryAcquire(int acquires) {
-            final Thread current = Thread.currentThread();
+    protected final boolean tryAcquire(int acquires) {
+       final Thread current = Thread.currentThread();
             int c = getState();
             if (c == 0) {
                 // 若队列中无有效结点才进行cas操作拿锁
-                if (!(this instanceof FairSync && !hasQueuedPredecessors()) && 
+                if (!(this instanceof FairSync && hasQueuedPredecessors()) && 
                     compareAndSetState(0, acquires)) {
                     setExclusiveOwnerThread(current);
                     return true;
@@ -260,7 +260,7 @@ protected final boolean tryAcquire(int acquires) {
                 return true;
             }
             return false;
-        }
+    }
 
 ```
 
