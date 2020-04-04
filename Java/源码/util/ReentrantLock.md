@@ -77,6 +77,9 @@ public class ReentrantLockTest {
             //acquireQueued：当前线程会根据公平性原则来进行阻塞等待（自旋）,直到获取锁为止；并且返回当前线程在等待过程中有没有中断过。
             selfInterrupt(); 
     }
+
+
+
 ```
 
 
