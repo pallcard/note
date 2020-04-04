@@ -238,8 +238,10 @@ public class ReentrantLockTest {
             return false;
         }
 ```
-看以上代码可以发现FairSync和NonfairSync中tryAcquire实际上只有一行代码是不同的，公平锁多了一个队列中是否存在有效结点的判断`!hasQueuedPredecessors()`，
-·
+看以上代码可以发现FairSync和NonfairSync中tryAcquire实际上只有一行代码是不同的，公平锁多了一个队列中是否存在有效结点的判断`!hasQueuedPredecessors()`，可以考虑到模板方法把
+```
+
+```
 
 
 
