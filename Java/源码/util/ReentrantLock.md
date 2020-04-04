@@ -56,6 +56,12 @@ public class ReentrantLockTest {
 #### 上锁相关代码
 
 ```java
+
+// ReentrantLock
+    public void lock() {
+        sync.lock();
+    }
+
 // ReentrantLock#NonfairSync
         final void lock() {
             if (compareAndSetState(0, 1))//若通过CAS设置变量State（同步状态）成功，也就是获取锁成功，则将当前线程设置为独占线程
@@ -120,11 +126,12 @@ public class ReentrantLockTest {
 #### 解锁相关代码
 
 ```
-    // Re
+    // ReentrantLock
     public void unlock() {
         sync.release(1);
     }
 
+、
     public final boolean release(int arg) {
         if (tryRelease(arg)) { // 释放锁成功后则执行后面的唤醒后续节点的逻辑了
             Node h = head;
