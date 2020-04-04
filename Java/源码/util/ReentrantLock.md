@@ -120,6 +120,23 @@ public class ReentrantLockTest {
 #### 解锁相关代码
 
 ```
+    // Re
+    public void unlock() {
+        sync.release(1);
+    }
+
+    public final boolean release(int arg) {
+        if (tryRelease(arg)) { // 释放锁成功后则执行后面的唤醒后续节点的逻辑了
+            Node h = head;
+            if (h != null && h.waitStatus != 0) // addWaiter 方法默认的节点状态为 0，此时节点还没有进入就绪状态
+                unparkSuccessor(h);
+            return true;
+        }
+        return false;
+    }
+
+
+
 ```
 
 ### 例子说明
