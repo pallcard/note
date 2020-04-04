@@ -53,6 +53,8 @@ public class ReentrantLockTest {
 
 ### 代码说明
 
+#### 上锁相关代码
+
 ```java
 // ReentrantLock#NonfairSync
         final void lock() {
@@ -115,7 +117,10 @@ public class ReentrantLockTest {
     }
 
 ```
+#### 解锁相关代码
 
+```
+```
 
 ### 例子说明
 
