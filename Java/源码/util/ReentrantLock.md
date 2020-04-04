@@ -78,7 +78,7 @@ public class ReentrantLockTest {
             selfInterrupt(); 
     }
 
-    // 
+    // ReentrantLock#FairSync
     protected final boolean tryAcquire(int acquires) {
         final Thread current = Thread.currentThread();
         int c = getState();
