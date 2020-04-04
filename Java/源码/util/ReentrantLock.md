@@ -47,7 +47,7 @@ public class ReentrantLockTest {
 
 ![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/04/04/1585988196704-1585988196707.png)
 
-说明：ReentrantLock 调用unlock时，然后调用release，而release通过tryRelease来设置state状态，并设置线程为null，最后unpark后面的
+说明：ReentrantLock 调用unlock时，然后调用release，而release通过tryRelease来设置state状态，并设置线程为null，最后unpark后面的结点。
 
 
 
