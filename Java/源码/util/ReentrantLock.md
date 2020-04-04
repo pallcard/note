@@ -4,7 +4,7 @@
 
 ### ReentrantLockTest
 
-ma
+main方法中通过`new ReentrantLock();`创建了一个可重入锁，然后通过线程池创建了5个线程，
 
 ```
 import java.util.concurrent.ExecutorService;
