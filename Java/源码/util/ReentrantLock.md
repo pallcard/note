@@ -121,6 +121,7 @@ public class ReentrantLockTest {
 
 开头例子启动了5个线程(t1,...t5)，启动后他们会去争抢锁，假设t1最先lock，他通过cas操作拿到了锁（假设长时间占用），然后t2(可能是其他线程)在取lock时会失败，然后调用acquire，会再次去获取锁，又失败了，就会将t2封装成一个Node对象，将其加入到队列中，然后在调用acquireQueued，此时t2为第一个结点，会再次去获取锁，若失败，修改前一个结点（head）的waitstatus=-1，自旋再次调用一遍，此时前一个结点的waitstaus=-1，故阻塞改线程。
 
+![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/04/04/1585997032470-1585997032560.png)
 
 
 
