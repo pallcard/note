@@ -250,16 +250,16 @@ public class ReentrantLockTest {
                 compareAndSetState(0, acquires)) {
                     setExclusiveOwnerThread(current);
                     return true;
-                }
             }
-            else if (current == getExclusiveOwnerThread()) {  // 可重入锁
-                int nextc = c + acquires;
-                if (nextc < 0)
-                    throw new Error("Maximum lock count exceeded");
-                setState(nextc);
-                return true;
-            }
-            return false;
+        }
+        else if (current == getExclusiveOwnerThread()) {  // 可重入锁
+            int nextc = c + acquires;
+            if (nextc < 0)
+                throw new Error("Maximum lock count exceeded");
+            setState(nextc);
+            return true;
+        }
+        return false;
     }
 
 ```
