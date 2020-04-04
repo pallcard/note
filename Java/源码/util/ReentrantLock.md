@@ -245,8 +245,8 @@ public class ReentrantLockTest {
         final Thread current = Thread.currentThread();
         int c = getState();
         if (c == 0) {
-            // 若队列中无有效结点才进行cas操作拿锁
-            if (this instanceof NonFairSync || !hasQueuedPredecessors()) && 
+            // 是非公平锁，若队列中无有效结点才进行cas操作拿
+            if ((this instanceof NonFairSync || !hasQueuedPredecessors()) && 
                 compareAndSetState(0, acquires)) {
                     setExclusiveOwnerThread(current);
                     return true;
