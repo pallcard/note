@@ -157,7 +157,34 @@ public class ReentrantLockTest {
             setState(c);
             return free;
         }
+    private void unparkSuccessor(Node node) {
+        /*
+         * If status is negative (i.e., possibly needing signal) try
+         * to clear in anticipation of signalling.  It is OK if this
+         * fails or if status is changed by waiting thread.
+         */
+        int ws = node.waitStatus;
+        if (ws < 0) // // 将头节点的状态设置为0, 尝试清除头节点的状态，改为初始状态
+            compareAndSetWaitStatus(node, ws, 0);
 
+        /*
+         * Thread to unpark is held in successor, which is normally
+         * just the next node.  But if cancelled or apparently null,
+         * traverse backwards from tail to find the actual
+         * non-cancelled successor.
+         */
+        Node s = node.next; // 后继节点
+        if (s == null || s.waitStatus > 0) {
+            s = null;
+            // for循环从队列尾部一直往前找可以唤醒的节点
+            for (Node t = tail; t != null && t != node; t = t.prev)
+                if (t.waitStatus <= 0)
+                    s = t;
+        }
+        if (s != null)
+	    // 唤醒后继节点
+            LockSupport.unpark(s.thread); 
+    }
 ```
 
 ### 例子说明
