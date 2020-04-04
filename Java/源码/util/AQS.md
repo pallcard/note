@@ -6,7 +6,7 @@ AQS的主要使用方式是继承，子类通过继承同步器并实现它的�
 ## 源码
 
 ### 定义
-```
+```java
 public abstract class AbstractQueuedSynchronizer
     extends AbstractOwnableSynchronizer
     implements java.io.Serializable {
@@ -20,7 +20,7 @@ public abstract class AbstractQueuedSynchronizer
 ```
 
 #### Node
-```
+```java
  static final class Node {
         // 共享模式，表示线程要获取的是共享锁，即一个锁可以被不同的线程拥有
         static final Node SHARED = new Node();  
@@ -49,7 +49,7 @@ public abstract class AbstractQueuedSynchronizer
 ### 重要方法
 
 #### acquire
-```
+```java
     public final void acquire(int arg) {
 	//去尝试获取锁，获取成功则设置锁状态并返回true，否则返回false。
         if (!tryAcquire(arg) &&
@@ -61,7 +61,7 @@ public abstract class AbstractQueuedSynchronizer
 
 
 #### addWaiter
-```
+```java
 private Node addWaiter(Node mode) {
         Node node = new Node(Thread.currentThread(), mode);
         // Try the fast path of enq; backup to full enq on failure

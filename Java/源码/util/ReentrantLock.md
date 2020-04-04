@@ -6,7 +6,7 @@
 
 main方法中通过`new ReentrantLock();`创建了一个可重入锁，然后通过线程池创建了5个线程，在各个线程中通过`rlock.lock();`进行加锁，然后执行逻辑，最后通过`rlock.unlock();`进行解锁。代码如下：
 
-```
+```java
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.locks.ReentrantLock;
@@ -125,7 +125,7 @@ public class ReentrantLockTest {
 ```
 #### 解锁相关代码
 
-```
+```java
     // ReentrantLock
     public void unlock() {
         sync.release(1);
@@ -192,7 +192,7 @@ public class ReentrantLockTest {
 ```
 
 #### 关于FairSync和NonfairSync中tryAcquire
-```
+```java
         // FairSync
         protected final boolean tryAcquire(int acquires) {
             return nonfairTryAcquire(acquires);
@@ -239,7 +239,7 @@ public class ReentrantLockTest {
         }
 ```
 看以上代码可以发现FairSync和NonfairSync中tryAcquire实际上只有一行代码是不同的，公平锁多了一个队列中是否存在有效结点的判断`!hasQueuedPredecessors()`，可以考虑到模板方法把可变的这一行提出来或者直接判断带对象是否是非公平锁。
-```
+```java
     // Sync
     protected final boolean tryAcquire(int acquires) {
         final Thread current = Thread.currentThread();
