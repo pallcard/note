@@ -42,7 +42,7 @@ public class ReentrantLockTest {
 
 ![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/04/04/1585987486634-1585987486636.png)
 
-说明：ReentrantLock 调用lock时，若为非公平锁先直接通过cas设置state的状态，若设置失败，在调用acquire，
+说明：ReentrantLock 调用lock时，若为非公平锁先直接通过cas设置state的状态，若设置失败，在调用acquire，acquire会先调用tryAcquire(AQS子类实现)，
 
 
 ![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/04/04/1585988196704-1585988196707.png)
