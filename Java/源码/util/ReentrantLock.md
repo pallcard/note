@@ -131,11 +131,13 @@ public class ReentrantLockTest {
         sync.release(1);
     }
 
-、
+    // AbstractQueuedSynchronizer
     public final boolean release(int arg) {
-        if (tryRelease(arg)) { // 释放锁成功后则执行后面的唤醒后续节点的逻辑了
+        // 释放锁成功后则执行后面的唤醒后续节点的逻辑了
+        if (tryRelease(arg)) { 
             Node h = head;
-            if (h != null && h.waitStatus != 0) // addWaiter 方法默认的节点状态为 0，此时节点还没有进入就绪状态
+            // addWaiter 方法默认的节点状态为 0，此时节点还没有进入就绪状态
+            if (h != null && h.waitStatus != 0) 
                 unparkSuccessor(h);
             return true;
         }
