@@ -278,6 +278,8 @@ public class ReentrantLockTest {
 
 说明：将前一个节点的状态改为-1是因为当前结点要更加前一个结点的情况来做操作，自己不用知道自己的状态。
 
+最开始new一个空的
+
 ## 参考：
 
 https://mp.weixin.qq.com/s/jCBrHSVK647bdVIPvJHxOg
