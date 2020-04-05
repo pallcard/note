@@ -276,9 +276,9 @@ public class ReentrantLockTest {
 
 ![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/04/04/1585997141559-1585997141562.png)
 
+说明：将前一个节点的状态改为-1是因为当前结点
 
-
-参考：
+## 参考：
 
 https://mp.weixin.qq.com/s/jCBrHSVK647bdVIPvJHxOg
 
