@@ -274,7 +274,7 @@ public class ReentrantLockTest {
 
 ![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/04/04/1585997180105-1585997180109.png)
 
-![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/04/04/1585997141559-1585997141562.png)
+![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/04/05/1586066014514-1586066014570.png)
 
 说明：将前一个节点的状态改为-1是因为当前结点要更加前一个结点的情况来做操作，自己不用知道自己的状态。
 
