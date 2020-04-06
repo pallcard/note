@@ -104,7 +104,7 @@ public class ReentrantLockTest2 {
                 } // 说明p为头节点且当前没有获取到锁（可能是非公平锁被抢占了）或者是p不为头结点，这个时候就要判断当前node是否要被阻塞（被阻塞条件：前驱节点的waitStatus为-1），防止无限循环浪费资源。具体两个方法下面细细分析
                 if (shouldParkAfterFailedAcquire(p, node) &&  // 获取锁失败，则进入挂起逻辑
                     parkAndCheckInterrupt()) //挂起当前线程，阻塞调用栈，返回当前线程的中断状态。
-                    interrupted = true; //lock.lock();h
+                    interrupted = true; //lock.lock();和lock.lockInterruptibly();区别
             }
         } finally {
             if (failed)
@@ -121,7 +121,7 @@ public class ReentrantLockTest2 {
 
 说明：在main线程中新建了两个线程t1，t2；t1是先去拿锁，然后死循环打印（通过t2去改变状态来使得循环结束）；对于t2也是先拿锁，在解锁前改变flag状态使得t1循环结束。
 
-流程：main启动t1、t2之后，t1首先会拿到锁，执行循环，然后t2通过`LockSupport.park(this);`阻塞，然后main中调用了`t2.interrupt();`，此时t2继续执行，
+流程：main启动t1、t2之后，t1首先会拿到锁，执行循环，然后t2通过`LockSupport.park(this);`阻塞，然后main中调用了`t2.interrupt();`，此时t2继续执行，由于中断doAcquireInterruptibly抛出异常，
 
 
 
