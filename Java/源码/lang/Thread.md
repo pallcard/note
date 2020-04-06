@@ -65,7 +65,7 @@ public class Thread implements Runnable {
     /* For generating thread ID */
     private static long threadSeqNumber;
 
-    volatile Object parkBlocker; // 线程的阻塞对象，线程阻塞在那个
+    volatile Object parkBlocker; // 线程的阻塞对象，（线程阻塞在那个对象上了）
 
     /* The object in which this thread is blocked in an interruptible I/O
      * operation, if any.  The blocker's interrupt method should be invoked
