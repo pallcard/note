@@ -69,3 +69,17 @@ public class ReentrantLockTest2 {
   }
 }
 ```
+
+说明：在main线程中新建了两个线程t1，t2
+
+
+
+
+
+
+
+
+
+
+
+
