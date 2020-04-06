@@ -1,7 +1,7 @@
 # Throwable
 
 类继承关系图
-
+![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/04/06/1586169529886-1586169529895.png)
 
 
 
