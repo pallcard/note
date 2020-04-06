@@ -5,4 +5,6 @@
 
 ## 判断线程是否被中断
 * Thread.currentThread().isInterrupted()
-* thread.interrupted()
+    
+* Thread.interrupted()
+    该方法调用后会将中断标示位清除，即重新设置为false
