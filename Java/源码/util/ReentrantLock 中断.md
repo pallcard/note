@@ -96,7 +96,7 @@ public class ReentrantLockTest2 {
 
 说明：在main线程中新建了两个线程t1，t2；t1是先去拿锁，然后死循环打印（通过t2去改变状态来使得循环结束）；对于t2也是先拿锁，在解锁前改变flag状态使得t1循环结束。
 
-流程：main启动t1、t2之后，t1首先会拿到锁，执行循环，然后t2通过LockSupport.park(this);阻塞，
+流程：main启动t1、t2之后，t1首先会拿到锁，执行循环，然后t2通过`LockSupport.park(this);`阻塞，然后main中调用了`t2.interrupt();`，
 
 
 
