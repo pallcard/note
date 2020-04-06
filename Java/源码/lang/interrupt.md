@@ -8,3 +8,10 @@
     判断某个线程是否已被发送过中断请求
 * Thread.interrupted()
     该方法调用后会将中断标示位清除，即重新设置为false
+
+## 中断线程
+
+
+
+## 参考
+https://www.cnblogs.com/onlywujun/p/3565082.html
