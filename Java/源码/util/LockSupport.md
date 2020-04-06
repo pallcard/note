@@ -2,7 +2,7 @@
 
 ## 重要方法
 ### park
-```
+```java
     public static void park(Object blocker) {
         Thread t = Thread.currentThread();
         setBlocker(t, blocker); // 使用Unsafe设置线程Blocker, 设置当前线程阻塞的原因，可以方便调试（线程在哪个对象上阻塞了）
@@ -17,3 +17,11 @@
     public native void park(boolean var1, long var2);
 ```
 ### unpark
+```java
+    public static void unpark(Thread thread) {
+        if (thread != null)
+            UNSAFE.unpark(thread);
+    }
+```
+说明：此函数表示如果给定线程的许可尚不可用，则使其可用。如果线程在 park 上受阻塞，则它将解除其阻塞状态。否则，保证下一次调用 park 不会受阻塞。如果给定线程尚未启动，则无法保证此操作有任何效果。
+
