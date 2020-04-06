@@ -103,7 +103,7 @@ class MyThread2 extends Thread {
 ```
 1. 如果线程在 park 上受阻塞，则它将解除其阻塞状态。否则，保证下一次调用 park 不会受阻塞。
 2. 在主线程调用park阻塞后，在myThread线程中发出了中断信号，此时主线程会继续运行，也就是说明此时interrupt起到的作用与unpark一样。
-3. 
+3. setBlocker的作用是 设置当前线程阻塞的原因，可以方便调试（线程在哪个对象上阻塞了）
 
 ## 参考
 
