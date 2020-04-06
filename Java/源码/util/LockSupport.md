@@ -101,6 +101,9 @@ class MyThread2 extends Thread {
   }
 }
 ```
+1. 
+2. 
+
 
 ## 参考
 
