@@ -64,7 +64,7 @@ public class ReentrantLockTest2 {
   }
 }
 
-
+    // lock.lockInterruptibly();
     private void doAcquireInterruptibly(int arg)
         throws InterruptedException {
         final Node node = addWaiter(Node.EXCLUSIVE);
@@ -88,6 +88,7 @@ public class ReentrantLockTest2 {
         }
     }
 
+    // lock.lock();
     //当前线程会根据公平性原则来进行阻塞等待（自旋）,直到获取锁为止；并且返回当前线程在等待过程中有没有中断过。
     final boolean acquireQueued(final Node node, int arg) {
         boolean failed = true;
@@ -103,7 +104,7 @@ public class ReentrantLockTest2 {
                 } // 说明p为头节点且当前没有获取到锁（可能是非公平锁被抢占了）或者是p不为头结点，这个时候就要判断当前node是否要被阻塞（被阻塞条件：前驱节点的waitStatus为-1），防止无限循环浪费资源。具体两个方法下面细细分析
                 if (shouldParkAfterFailedAcquire(p, node) &&  // 获取锁失败，则进入挂起逻辑
                     parkAndCheckInterrupt()) //挂起当前线程，阻塞调用栈，返回当前线程的中断状态。
-                    interrupted = true;
+                    interrupted = true; //lock.lock();h
             }
         } finally {
             if (failed)
