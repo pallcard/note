@@ -124,6 +124,8 @@ public class ReentrantLockTest2 {
 流程：main启动t1、t2之后，t1首先会拿到锁，执行循环，然后t2通过`LockSupport.park(this);`阻塞，然后main中调用了`t2.interrupt();`，此时t2继续执行，由于中断doAcquireInterruptibly抛出异常，node被设置为取消，然后t2的继续执行。此时t1，t2未进行同步。
 
 ```java
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 public class ReentrantLockTest3 {
 
   public static Lock lock = new ReentrantLock();
@@ -188,10 +190,9 @@ public class ReentrantLockTest3 {
     System.out.println(Thread.currentThread().getName() +" :"+count);
   }
 }
-
-
 ```
 
+说明：t1 和t2线程分别将100000
 
 
 
