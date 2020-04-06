@@ -18,11 +18,6 @@ public class ReentrantLockTest2 {
       lock.lock();
 
       System.out.println(Thread.currentThread().getName()+"start");
-      try {
-        Thread.sleep(10000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
       while (test<=0) {
         System.out.println("111");
       }
