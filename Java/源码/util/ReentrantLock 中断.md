@@ -152,6 +152,7 @@ public class ReentrantLockTest3 {
     Thread t2 = new Thread(() -> {
       try {
         lock.lockInterruptibly();
+	// lock.lock();
       } catch (InterruptedException e) {
         System.out.println(Thread.currentThread().getName()+"interrupt");
         e.printStackTrace();
@@ -192,7 +193,7 @@ public class ReentrantLockTest3 {
 }
 ```
 
-说明：t1 和t2线程分别将100000
+说明：t1 和t2线程分别将count加100000，若使用lock.lock
 
 
 
