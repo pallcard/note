@@ -63,11 +63,18 @@ public class ReentrantLockTest2 {
     t2.interrupt();
   }
 }
+
+
+    private final boolean parkAndCheckInterrupt() {
+        LockSupport.park(this); //LockSupport 是用来创建锁和其他同步类的基本线程阻塞原语。
+        return Thread.interrupted();  // 该方法调用后会将中断标示位清除，即重新设置为false，主要用于lockInterruptibly，调用lock无用，但是由于此处会改变中断状态，之后需要还原
+    }
+
 ```
 
 说明：在main线程中新建了两个线程t1，t2；t1是先去拿锁，然后死循环打印（通过t2去改变状态来使得循环结束）；对于t2也是先拿锁，在解锁前改变flag状态使得t1循环结束。
 
-流程：main启动t1、t2之后，t1首先会拿到锁，执行循环
+流程：main启动t1、t2之后，t1首先会拿到锁，执行循环，然后t2阻塞，
 
 
 
