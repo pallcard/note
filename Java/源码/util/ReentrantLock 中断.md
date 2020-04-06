@@ -193,7 +193,7 @@ public class ReentrantLockTest3 {
 }
 ```
 
-说明：t1 和t2线程分别将count加100000，若使用lock.lock()进行加锁，lock不响应中断，故t1，t2会串行执行，最终结果是
+说明：t1 和t2线程分别将count加100000，若使用lock.lock()进行加锁，lock不响应中断，故t1，t2会串行执行，最终结果是200000，但是使用lock.lockInterruptibly()进行加锁，中断会会抛出异常，最后导致t1，t2
 
 
 
