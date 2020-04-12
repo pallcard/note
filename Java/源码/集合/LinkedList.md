@@ -30,5 +30,5 @@ public class LinkedList<E>
 
 
 ## 源码
-[ArrayList](https://github.com/pallcard/learn-java/blob/master/src/main/resources/jdk/jdk1_8/java/util/LinkedList.java "LinkedList")
+[LinkedList](https://github.com/pallcard/learn-java/blob/master/src/main/resources/jdk/jdk1_8/java/util/LinkedList.java "LinkedList")
 
