@@ -46,7 +46,7 @@ docker pull mysql:5.6
 docker run -d --name mymysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=xxxxx mysql:5.6
 # 运行容器，一般创建好容器后容器会自动运行
 docker start 容器名或容器ID
-# 允许远程访问
+
 docker exec -it 容器名或容器ID /bin/bash
 #进入mysql
 mysql -u root -p
@@ -62,7 +62,9 @@ exit
 ### 远程访问mysql遇到的问题
 连接不上，修改一下root的密码
 ```
-首先登录MySQL。  
+首先登录MySQL
+docker exec -it 容器名或容器ID /bin/bash
+mysql -u root -p
 mysql> use mysql;  
 mysql> update user set password=password('123') where user='root' and host='localhost';  
 mysql> flush privileges;  
