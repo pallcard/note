@@ -34,7 +34,7 @@ sudo docker info
 
 ## 第二步：mysql、redis配置
 ### mysql
-此次实验安装的是mysql 5.6版本，
+此次实验安装的是mysql 5.6版本
 ```
 docker pull mysql:5.6
 ```
