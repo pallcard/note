@@ -29,11 +29,12 @@ sudo yum -y install docker-ce
 ```
 sudo systemctl start docker
 ```
-6. 测试运行 hello-world
-docker run hello-world
-————————————————
-版权声明：本文为CSDN博主「No_Game_No_Life_」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
-原文链接：https://blog.csdn.net/No_Game_No_Life_/java/article/details/95179613
+6. 验证是否安装成功
+sudo docker info
+
+
+参考：
+https://blog.csdn.net/No_Game_No_Life_/article/details/95179613?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase
 
 
 
