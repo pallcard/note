@@ -100,6 +100,9 @@ docker run -d --privileged=true -p 6379:6379 -v /docker/redis/redis.conf:/etc/re
     EXPOSE 7000
     ENTRYPOINT ["java", "-jar", "app.jar", "--spring.profiles.active=qa", "--server.port=7000", "> /log/app.log"]
     ```
+3. 上传文件Dockerfile和springBootDocker.jar到服务器的同一目录下
+
+
 
 参考：
 1. https://blog.csdn.net/No_Game_No_Life_/article/details/95179613?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase
