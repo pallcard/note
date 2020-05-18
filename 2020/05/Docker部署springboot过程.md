@@ -60,7 +60,8 @@ exit
 exit
 ```
 ### 远程访问mysql遇到的问题
-连接不上，修改一下root的密码
+1. 连接不上，修改一下root的密码;
+2. 注意对于云服务器
 ```
 首先登录MySQL
 docker exec -it 容器名或容器ID /bin/bash
