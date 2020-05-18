@@ -102,7 +102,7 @@ docker run -d --privileged=true -p 6379:6379 -v /docker/redis/redis.conf:/etc/re
     ```
 3. 上传文件Dockerfile和springBootDocker.jar到服务器的同一目录下
 ![title](https://raw.githubusercontent.com/pallcard/noteImg/master/noteImg/2020/05/19/1589818682320-1589818682321.png)
-
+4. 将jar打包为镜像（docker build -t boot-docker .）
 
 参考：
 1. https://blog.csdn.net/No_Game_No_Life_/article/details/95179613?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase
