@@ -93,7 +93,12 @@ docker run -d --privileged=true -p 6379:6379 -v /docker/redis/redis.conf:/etc/re
 1. 使用mvn生成jar包 -----> springboot.jar
 2. 新建Dockerfile文件(无后缀名)
     ```
-    
+    FROM java:8
+    VOLUME /tmp
+    COPY schoolAssistant.jar app.jar
+    RUN bash -c "touch /app.jar"
+    EXPOSE 7000
+    ENTRYPOINT ["java", "-jar", "app.jar", "--spring.profiles.active=qa", "--server.port=7000", "> /log/app.log"]
     ```
 
 参考：
