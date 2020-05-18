@@ -132,11 +132,11 @@ docker start 容器名或容器ID
 
 # 停止运行容器
 docker stop 容器名或容器ID
-删除容器
 
+# 删除容器
 docker rm -f 容器名或容器ID
-进入容器内容bash
 
+# 进入容器内容bash
 docker exec -it 容器名或容器ID bash
 
 # 退出容器命令
