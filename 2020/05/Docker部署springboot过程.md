@@ -70,7 +70,11 @@ mysql> update user set password=password('123') where user='root' and host='loca
 mysql> flush privileges;  
 ```
 ### redis配置
+```
+# 
+docker pull mysql:5.6
 
+```
 
 
 
