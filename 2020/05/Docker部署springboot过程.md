@@ -47,7 +47,20 @@ docker run -d --name mymysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=xxxxx mysql:5.6
 # 运行容器，一般创建好容器后容器会自动运行
 docker start 容器名或容器ID
 # 允许远程访问
-docker exec -it 容器名或容器ID
+docker exec -it 容器名或容器ID /bin/bash
+#进入mysql
+mysql -u root -p
+
+#授权
+GRANT ALL PRIVILEGES ON *.* TO root@"%" IDENTIFIED BY "rw";
+flush privileges;
+
+#退出
+#第一个exit退出mysql
+#第二个exit退出容器的bash
+exit
+exit
+
 
 ```
 
