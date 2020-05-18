@@ -44,6 +44,7 @@ docker pull mysql:5.6
 # -e 设置root用户密码为xxxxx；
 # mysql:5.6 可以用imageID代替，代表用于创建容器的镜像。
 docker run -d --name mymysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=xxxxx mysql:5.6
+# 
 ```
 
 
