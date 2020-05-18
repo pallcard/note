@@ -62,7 +62,10 @@ exit
 ### 远程访问mysql遇到的问题
 连接不上，修改一下root的密码
 ```
-
+首先登录MySQL。  
+mysql> use mysql;  
+mysql> update user set password=password('123') where user='root' and host='localhost';  
+mysql> flush privileges;  
 ```
 
 
