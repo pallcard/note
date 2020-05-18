@@ -50,18 +50,14 @@ docker start 容器名或容器ID
 docker exec -it 容器名或容器ID /bin/bash
 #进入mysql
 mysql -u root -p
-
 #授权
 GRANT ALL PRIVILEGES ON *.* TO root@"%" IDENTIFIED BY "rw";
 flush privileges;
-
 #退出
 #第一个exit退出mysql
 #第二个exit退出容器的bash
 exit
 exit
-
-
 ```
 
 
