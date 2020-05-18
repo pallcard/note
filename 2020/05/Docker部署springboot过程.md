@@ -64,7 +64,7 @@ exit
 ```
 首先登录MySQL
 docker exec -it 容器名或容器ID /bin/bash
-mysql -u root -p
+mysql> mysql -u root -p
 mysql> use mysql;  
 mysql> update user set password=password('123') where user='root' and host='localhost';  
 mysql> flush privileges;  
@@ -73,9 +73,8 @@ mysql> flush privileges;
 
 参考：
 1. https://blog.csdn.net/No_Game_No_Life_/article/details/95179613?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase
-
 2. https://blog.csdn.net/zhs145612zhs/article/details/82225591
 3. https://www.cnblogs.com/whoyoung/p/10988136.html
-4. 
+4. https://www.cnblogs.com/mrhonest/p/10881646.html
 
 
