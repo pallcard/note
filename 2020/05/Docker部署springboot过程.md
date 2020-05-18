@@ -36,8 +36,9 @@ sudo docker info
 ### mysql
 此次实验安装的是mysql 5.6版本
 ```
-
+# 
 docker pull mysql:5.6
+# -d 后台运行，--name 设置名称 selfdefinename 是用户自定义的容器名称，-p 设置端口映射，第一个3306是当前主机的端口，第二个3306指容器中的端口；-e 设置root用户密码为rw；最后的mysql:5.6 可以用imageID代替，代表用于创建容器的镜像。
 docker run -d --name mymysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=xxxxx mysql:5.6
 ```
 
