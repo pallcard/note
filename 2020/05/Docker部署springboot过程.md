@@ -105,7 +105,7 @@ docker run -d --privileged=true -p 6379:6379 -v /docker/redis/redis.conf:/etc/re
 4. 将jar打包为镜像（docker build -t boot-docker .）
 5. 运行镜像
     ```
-    docker run --name spring-boot-docker -d -v /log:/log -p 8080:8080 spring-boot-docker
+    docker run --name spring-boot-docker -d -v /log:/log -p 7000:7000 spring-boot-docker
     ```
 
 参考：
