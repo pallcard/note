@@ -2,6 +2,7 @@
 
 ## 环境
 1. 阿里云服务器，系统centos
+2. springboot项目工程
 
 ## 第一步：Docker的安装
 ### 检测内核
