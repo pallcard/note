@@ -107,6 +107,10 @@ docker run -d --privileged=true -p 6379:6379 -v /docker/redis/redis.conf:/etc/re
     ```
     docker run --name spring-boot-docker -d -v /log:/log -p 7000:7000 spring-boot-docker
     ```
+6. 查看日志
+    ```
+    sudo docker logs -f -t --tail -1  myspringboot
+    ```
 
 参考：
 1. https://blog.csdn.net/No_Game_No_Life_/article/details/95179613?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase
