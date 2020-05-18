@@ -59,6 +59,8 @@ flush privileges;
 exit
 exit
 ```
+### 远程访问mysql遇到的问题
+
 
 
 参考：
