@@ -115,10 +115,9 @@ docker run -d --privileged=true -p 6379:6379 -v /docker/redis/redis.conf:/etc/re
 
 ## Docker常用命令
 ```
-新建容器
-
+# 新建容器
 docker run -d --name 自定义容器名 镜像ID或镜像名
-展示当前运行的容器
+# 展示当前运行的容器
 
 docker ps
 展示所有容器
@@ -143,6 +142,7 @@ docker exec -it 容器名或容器ID bash
 关闭docker服务
 
 systemctl stop docker
+```
 
 参考：
 1. https://blog.csdn.net/No_Game_No_Life_/article/details/95179613?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase
