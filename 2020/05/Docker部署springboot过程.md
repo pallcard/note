@@ -91,8 +91,10 @@ docker run -d --privileged=true -p 6379:6379 -v /docker/redis/redis.conf:/etc/re
 
 ## 第三步：部署Spring boot项目
 1. 使用mvn生成jar包 -----> springboot.jar
-2. 
-
+2. 新建Dockerfile文件(无后缀名)
+    ```
+    
+    ```
 
 参考：
 1. https://blog.csdn.net/No_Game_No_Life_/article/details/95179613?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase
