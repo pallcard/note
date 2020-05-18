@@ -89,6 +89,7 @@ mkdir data
 docker run -d --privileged=true -p 6379:6379 -v /docker/redis/redis.conf:/etc/redis/redis.conf -v /docker/redis/data:/data --name redistest2 docker.io/redis:latest redis-server /etc/redis/redis.conf --appendonly yes
 ```
 
+## 第三步：部署Spring boot项目
 
 
 参考：
@@ -96,5 +97,5 @@ docker run -d --privileged=true -p 6379:6379 -v /docker/redis/redis.conf:/etc/re
 2. https://blog.csdn.net/zhs145612zhs/article/details/82225591
 3. https://www.cnblogs.com/whoyoung/p/10988136.html
 4. https://www.cnblogs.com/mrhonest/p/10881646.html
-
+5. https://blog.csdn.net/funtaster/article/details/83274727
 
