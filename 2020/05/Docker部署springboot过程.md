@@ -33,7 +33,7 @@ sudo systemctl start docker
 sudo docker info
 
 ## 第二步：mysql、redis配置
-### mysql
+### mysql配置
 此次实验安装的是mysql 5.6版本
 ```
 # 
@@ -69,7 +69,10 @@ mysql> use mysql;
 mysql> update user set password=password('123') where user='root' and host='localhost';  
 mysql> flush privileges;  
 ```
-### mysql
+### redis配置
+
+
+
 
 参考：
 1. https://blog.csdn.net/No_Game_No_Life_/article/details/95179613?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase
