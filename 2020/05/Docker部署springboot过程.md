@@ -36,8 +36,9 @@ sudo docker info
 ### mysql
 此次实验安装的是mysql 5.6版本
 ```
+
 docker pull mysql:5.6
-docker run -d --name selfdefinename -p 3306:3306 -e MYSQL_ROOT_PASSWORD=rw mysql:5.6
+docker run -d --name mymysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=xxxxx mysql:5.6
 ```
 
 
