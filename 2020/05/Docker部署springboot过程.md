@@ -113,6 +113,37 @@ docker run -d --privileged=true -p 6379:6379 -v /docker/redis/redis.conf:/etc/re
     sudo docker logs -f -t --tail -1  myspringboot
     ```
 
+## Docker常用命令
+```
+新建容器
+
+docker run -d --name 自定义容器名 镜像ID或镜像名
+展示当前运行的容器
+
+docker ps
+展示所有容器
+
+docker ps -a
+展示所有本地镜像
+
+docker images
+运行容器
+
+docker start 容器名或容器ID
+停止运行容器
+
+docker stop 容器名或容器ID
+删除容器
+
+docker rm -f 容器名或容器ID
+进入容器内容bash
+
+docker exec -it 容器名或容器ID bash
+#退出容器命令:exit
+关闭docker服务
+
+systemctl stop docker
+
 参考：
 1. https://blog.csdn.net/No_Game_No_Life_/article/details/95179613?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase
 2. https://blog.csdn.net/zhs145612zhs/article/details/82225591
